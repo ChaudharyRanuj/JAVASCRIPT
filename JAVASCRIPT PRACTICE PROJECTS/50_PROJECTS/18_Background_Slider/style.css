@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:ital,wght@0,400;0,600;0,700;1,500&display=swap");
+
+/* GLOBAL */
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-color);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* HEADER CSS */
+header {
+  padding: 12px 48px;
+  background-color: var(--secondary-color);
+}
+.nav-list img {
+  width: 150px;
+}
+.nav-links {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  position: relative;
+}
+
+.border-bottom {
+  position: absolute;
+  bottom: 0;
+  top: 2px;
+  height: 100%;
+  width: 0;
+  border-bottom: 2px solid #fff;
+  transition: width 0.2s ease-in-out;
+}
+
+.nav-links:hover .border-bottom {
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+  color: aliceblue;
+}
+
+.search {
+  font-family: inherit;
+  font-size: 1rem;
+  width: 400px;
+  border-radius: 12px;
+  padding: 6px 8px;
+  margin: 2px;
+  border: none;
+  }
+
+  .search:focus {
+    color:#373b69;
+  }
+
+.search::placeholder {
+  color: #737873;
+}
+header input:hover {
+  outline-color: #373b69;
+}
+
+/* MAIN CSS */
+
+main {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
+  margin: 0 auto;
+}
+
+.movie {
+  position: relative;
+  width: 200px;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  color: rgb(218, 204, 204);
+  letter-spacing: 1.5px;
+  box-shadow: 1px 1px 4px 2px #00000075;
+  /* transition: all .4s ease; */
+}
+
+/* .movie:hover {
+  transform: scale(105%);
+} */
+
+.movie span {
+  background-color: #201a52;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.movie img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.movie .movie-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.overview {
+  position: absolute;
+  bottom: 0;
+  padding: 12px;
+  background-color: #ffffff;
+  top: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: top 1s ease-in-out;
+  z-index: 99999;
+  color: black;
+  opacity: 0;
+  color: white;
+  background-color: var(--secondary-color);
+}
+
+.movie:hover .overview {
+  display: block;
+  top: 0;
+  opacity: 90%;
+}

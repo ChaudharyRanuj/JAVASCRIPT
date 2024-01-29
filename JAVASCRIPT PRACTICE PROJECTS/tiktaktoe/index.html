@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+    <script src="index.js"  defer></script>
+    <style>
+
+
+.not-allowed {
+    pointer-events: none;
+}
+        td {
+            padding: 5px;
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        table {
+            width: auto;
+            border: 5px solid black;
+        }
+
+button {
+    padding: 15px;
+}
+
+
+.bgColor {
+    background-color: black;
+    color: white;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Winner</h1> 
+    <h2></h2>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+
+      <button id="reset">Reset</button>
+
+</body>
+</html>

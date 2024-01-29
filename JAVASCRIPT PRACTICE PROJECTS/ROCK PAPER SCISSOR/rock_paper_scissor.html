@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="rock.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h2 class="text-2xl text-center bg-yellow-200 py-6 font-bold">ROCK PAPER SCISSOR GAME</h2>
+    <div id="outerDiv" class=" flex justify-center items-baseline bg-yellow-200 h-72 pt-16">
+<div class="flex gap-6 font-bold ">
+<div class="border border-black p-8 ">
+<h2>Player Chance</h2>
+<p class="mt-4 text-center w-32 bg-green-400 py-4 box-border" id="playerChance">ROCK</p>
+</div>
+<div class="w-96"><h1 class="underline text-center text-2xl" >WINNER</h1>
+<marquee class="text-center" id="gameStatus">Star Game to Play</marquee>
+<p class="text-center font-bold text-2xl mt-2" id="winnerStatus"></p>
+<button id="runGame" class="m-auto block bg-blue-300 px-5 py-2 rounded-xl mt-6 hover:text-white hover:bg-blue-600 duration-200" >Star Game</button>
+</div>
+<div class="border border-black p-8">
+    <h2>Computer Chance</h2>
+    <p class="mt-4 text-center w-32  bg-purple-400 text-black py-4 box-border" id="computerChance">SCISSOR</p>
+    </div>
+
+      </div>
+    
+    </div>
+   
+
+ 
+  </body>
+</html>

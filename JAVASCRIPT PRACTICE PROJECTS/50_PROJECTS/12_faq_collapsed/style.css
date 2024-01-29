@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:ital,wght@0,400;0,600;0,700;1,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #eee;
+}
+
+.faq-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.faq {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: transparent;
+  position: relative;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3), 2px 0 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.faq.active {
+  background-color: #fff;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+.faq.active .faq-toggle {
+  background-color: #5249da;
+}
+
+.faq.active .fa-xmark {
+  display: block;
+  color: #fff;
+  
+}
+
+.faq .fa-xmark {
+  display: none;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-text {
+  display: none;
+}
+
+.faq-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+ 
+}
+
+.fa-xmark,
+.fa-chevron-down {
+  font-size: 12px;
+display: block;
+}
+
