@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Making Own Object Methods</h1>
+    <script>
+    // 1. MADE A METHOD SAME AS FOREACH
+
+    //   const obj = {
+    //     arr: [255, 455, 877, -255, -859],
+    //     forEvery(fn) {
+    //       for (i = 0; i < this.arr.length; i++) {
+    //         fn(this.arr[i], i, this.arr);
+    //       }
+    //     },
+    //     getItem(item) {
+    //       if (item > 0) {
+    //         console.log(`You deposited ${item} in your Account`);
+    //       } else {
+    //         console.log(`You debited ${item} from your Account`);
+    //       }
+    //     },
+    //     arrValues() {
+    //     const arrReturn = []
+    //       for (i = 0; i < this.arr.length; i++) {
+    //         arrReturn[i] = [i, this.arr[i]]
+    //       }
+    //       return console.log(arrReturn);
+    //     },
+    //   };
+
+    //   console.log('---- CALLING METHOD DIRECTLY---------')
+    //   obj.forEvery(obj.getItem);
+      
+    //   console.log('---- CALLING METHOD WITH CUSTOM ARRAY USING CALL METHOD---------')
+    //   obj.forEvery.call({arr:[855,-989,400,500,800]}, obj.getItem);
+      
+    //   console.log('---- CALLING METHOD DIRECTLY---------')
+    //   obj.arrValues();
+    //   console.log('---- CALLING METHOD WITH CUSTOM ARRAY USING CALL METHOD---------')
+    //   obj.arrValues.call({arr:[855,-989,400,500,800]});
+
+    // 2. MADE A METHOD SAME AS ENTRIES
+    //   const objEnt = {
+    //     arr: [255, 455, 877, -255, -859],
+    //     arrValues() {
+    //     const arrReturn = []
+    //       for (i = 0; i < this.arr.length; i++) {
+    //         arrReturn[i] = [i, this.arr[i]]
+    //       }
+    //       return arrReturn;
+    //     }        
+    //   };
+    //     const arrayWith = objEnt.arrValues.call({arr:[455,255]});
+    //     console.log(arrayWith);
+
+
+
+
+    </script>
+  </body>
+</html>

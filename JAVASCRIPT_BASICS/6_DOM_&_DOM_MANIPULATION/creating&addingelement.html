@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Adding and Creating Elements in DOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .leftDiv button {
+        font-weight: 600;
+        color: rgb(6, 6, 47);
+      }
+      .leftDiv button:hover {
+        background-color: rgb(8, 34, 48);
+        color: rgb(255, 255, 255);
+        transition: background-color 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="bg-green-200 h-screen">
+      <h1 class="text-2xl text-center py-4 font-bold bg-green-400">
+        Adding and Creating Elements in DOM
+      </h1>
+      <!-- GLOBAL DIV -->
+      <div class="flex h-3/4">
+        <!-- LEFT DIV  -->
+        <div
+          class="leftDiv flex flex-col gap-6 w-1/4 p-8 border border-green-500 justify-center max-h-full"
+        >
+          <button class="bg-blue-400 px-5 py-2 rounded-xl addElements">
+            Add Elements
+          </button>
+          <button class="bg-blue-400 px-5 py-2 rounded-xl appendAfterList">
+            Append After First Child
+          </button>
+          <button class="bg-blue-400 px-5 py-2 rounded-xl appendBeforeList">
+            Append Before Last Child
+          </button>
+          <button class="bg-blue-400 px-5 py-2 rounded-xl prependListElement">
+            Prepend List Item
+          </button>
+          <button
+            class="bg-blue-400 px-5 py-2 rounded-xl cloneElement cloneChildElement"
+          >
+            Clone Node without Nested Element
+          </button>
+          <button
+            class="bg-blue-400 px-5 py-2 rounded-xl cloneElement cloneDescendants"
+          >
+            Clone Node with Nested Element
+          </button>
+          <button
+            class="bg-blue-400 px-5 py-2 rounded-xl removeElement cloneDescendants"
+          >
+            BY REMOVE ELEMENT
+          </button>
+          <button
+            class="bg-blue-400 px-5 py-2 rounded-xl removeChildElement cloneDescendants"
+          >
+            BY REMOVE CHILD ELEMENT
+          </button>
+        </div>
+        <!-- /- END LEFT DIV  -->
+        <!-- START RIGHT DIV -->
+        <div class="bigRight flex w-3/4 border border-green-500 max-h-full">
+          <div
+            class="addItemsBox relative px-4 w-2/5 border border-green-500 overflow-scroll h-full"
+          >
+            <h2
+              class="absolute sticky top-0 py-2 text-2xl text-center leading-4 bg-green-200 font-bold"
+            >
+              Added Items
+            </h2>
+            <ul class="mt-8 addList"></ul>
+          </div>
+          <div
+            class="relative p-4 w-3/5 border border-green-500 overflow-scroll"
+          >
+            <h2
+              class="absolute sticky top-0 px-6 text-left text-2xl leading-4 font-bold"
+            >
+              Clone Items
+            </h2>
+            <div class="cloneItems flex-col flex-wrap"></div>
+          </div>
+        </div>
+        <!-- END RIGHT DIV -->
+      </div>
+      <!-- /- GLOBAL DIV -->
+    </section>
+
+    <script>
+      // ---------------------- CREATING THE ELEMENT ----------------------
+      // document.createElement('name of element to add in dom')
+      // appendChild(element to append as child in html element)
+
+      //
+
+      const ul = document.querySelector("ul");
+      const listFour = document.createElement("li");
+
+      let sno = 0;
+      function solve() {
+        const listOne = document.createElement("li");
+        const listTwo = document.createElement("li");
+        const listThree = document.createElement("li");
+        const listFour = document.createElement("li");
+        let i = 1;
+        listOne.textContent = `Learn JavaScript ${i++}`;
+        listTwo.textContent = `Learn JavaScript ${i++}`;
+        listThree.textContent = `Learn JavaScript ${i++}`;
+        listFour.textContent = `Learn JavaScript ${i++}`;
+       
+        ul.append(listOne, listTwo, listThree, listFour);
+        return sno;
+      }
+      // QUERY ADDING THE ELEMENTS
+      document.querySelector(".addElements").addEventListener("click", solve);
+
+      // QUERYT TO APPEND THE ELEMENT
+      document
+        .querySelector(".appendAfterList")
+        .addEventListener("click", appendListAfter);
+      // QUERY TO APPEND BEFORE (ADD ELEMENT TO LAST POSITION)
+
+      document
+        .querySelector(".appendBeforeList")
+        .addEventListener("click", appendListBefore);
+
+      // QUERY TO PREPEND ELEMENT (ADD ITEM TO START)
+      document
+        .querySelector(".prependListElement")
+        .addEventListener("click", prepandList);
+
+      // QUERY TO CLONE THE CHILD ELEMENT SELECTED
+      document
+        .querySelector(".cloneChildElement")
+        .addEventListener("click", cloneListChild);
+
+      // QUERY  TO CLONE THE DESCEDENTS
+      document
+        .querySelector(".cloneDescendants ")
+        .addEventListener("click", cloneDescendants);
+
+      // QUERY  TO REMOVE THE ELEMENT
+      document
+        .querySelector(".removeElement")
+        .addEventListener("click", removeElement);
+
+      // QUERY  TO REMOVE THE ELEMENT
+      document
+        .querySelector(".removeChildElement")
+        .addEventListener("click", removeChildElement);
+
+      // ------------------------------ FUNCTION TO ADD REMOVE APPEND PREPEND THE ELEMENTS ------------------------
+
+      function appendListAfter() {
+        listFour.textContent = `Learn JavaScript 4`;
+        ul.firstElementChild.after(listFour);
+      }
+
+      function appendListBefore() {
+        listFour.textContent = `Learn JavaScript 4`;
+        ul.lastElementChild.before(listFour);
+      }
+
+      function prepandList() {
+        const listFive = document.createElement("li");
+        listFive.textContent = `Learn JavaScript 5`;
+        ul.prepend(listFive);
+        return listFive;
+      }
+
+      function cloneListChild() {
+        const listFive = document.createElement("li");
+        listFive.textContent = `Learn JavaScript 5`;
+        const listSix = listFive.cloneNode(true);
+        document.querySelector(".addList").append(listSix);
+      }
+
+      function cloneDescendants() {
+        const cloneItem = ul.cloneNode(true);
+        document.querySelector(".cloneItems").append(cloneItem);
+      }
+      // remove element with remove() method
+      function removeElement() {
+        ul.remove();
+      }
+
+      // remove element with removeChild() method
+      function removeChildElement() {
+        ul.parentElement.removeChild(ul);
+      }
+
+      // ------------------------- ADDING THE ELEMENT ------------------------
+    </script>
+  </body>
+</html>

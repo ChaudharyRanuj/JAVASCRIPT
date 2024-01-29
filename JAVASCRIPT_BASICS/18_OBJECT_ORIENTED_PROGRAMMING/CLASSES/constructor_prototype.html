@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise time!</title>
+    <!-- <script src="practice.js"></script> -->
+  </head>
+  <body>
+    <h1>Practice of this</h1>
+    <script>
+      "use strict;";
+      //     function myName() {
+      //         let firstName = 'Ranuj';
+      //         // console.log(firstName + ' ' + lastName);
+      //     }
+      //     function myLastName() {
+      //         const lastName = 'Choudhary';
+      //     console.log(firstName + ' ' + lastName  );
+      //     }
+
+      //        myLastName();
+      //       if (true) {
+      //           var teacher = "Mr Sumit Panwar";
+      //           console.log(` ${teacher} (Class Teacher)`);
+      //         //   let principle = "Ms Maheshwari";
+
+      //           if (!principle) {
+      //         throw 'Principle value not found';
+      //        }
+
+      //        const student = "Deepak Choudhary";
+      //        console.log(` ${student} (Student)`);
+      // }
+
+      // try {
+
+      // } catch (error) {
+      //     console.log(error)
+      // }
+
+      // function Property(name, age , interest, hobby, birthYear) {
+      // this.name = name;
+      // this.age = age;
+      // this.interest = interest;
+      // this.hobby = hobby;
+      // this.birthYear = birthYear;
+      // this.currentYear = 2023;
+      // }
+
+      // const ranuj = new Property('Ranuj', 32, ['technology', 'agriculture', 'vedas', 'coding'],['Yoga', 'Gardening'], 1991 );
+      // const raneesh = new Property('Raneesh', 32, ['technology', 'gaming','trevelling'], ['Yoga', 'Gardening'], 1994);
+      // console.log(ranuj.__proto__);
+      // console.log(raneesh.__proto__);
+
+      // Property.prototype.ageCalculate = function () {
+      //   return (this.currentYear - this.birthYear) + ' Years';
+      // }
+
+      // console.log(ranuj.ageCalculate());
+      // console.log(raneesh.ageCalculate());
+
+      // WORKING OF  CONSTRUCTOR & PROTOTYPE
+
+//       function Car(make, speed) {
+//         this.make = make;
+//         this.speed = speed;
+//       }
+
+//       Car.prototype.accelaration = function () {
+//         this.speed += 10;
+//         console.log(
+//           `${this.make} car is moving with the speed of ${this.speed} km/h`
+//         );
+//       };
+
+//       Car.prototype.break = function () {
+//         this.speed -= 15;
+//         console.log(
+//           `${this.make} car is moving with the speed of ${this.speed} km/h`
+//         );
+//       };
+
+//       function ElectricCar(make, speed, charge) {
+//         Car.call(this, make, speed);
+//         this.charge = charge;
+//       }
+
+//       ElectricCar.prototype = Object.create(Car.prototype);
+//       ElectricCar.prototype.constructor = ElectricCar;
+
+//       ElectricCar.prototype.chargeBattery = function (chargeTo) {
+//         this.charge += chargeTo;
+        
+//         if (this.charge > 100) {
+//           this.charge = 100;
+//           console.log("Battery is fully charged.");
+//         } else {
+//            console.log(`Battery is charging & ${this.charge}% filled`);
+//         }
+//       }
+
+//       ElectricCar.prototype.accelaration = function () {
+//         this.speed += 20;
+//         this.charge -= 10;
+//         console.log(
+//           ` Tata is going with the speed of ${this.speed} km/h, with a charge of ${this.charge}%`
+//         );
+//       }
+
+//       const car1 = new ElectricCar("Tata", 120, 23);
+
+// console.log(car1)
+//       console.log(car1);
+//       car1.accelaration();
+//       car1.chargeBattery(25);
+//       car1.break()
+//       car1.break()
+//       car1.break()
+//       console.log(car1.charge)
+//       car1.accelaration(25);
+//       car1.accelaration(25);
+//       car1.accelaration(25);
+//       car1.chargeBattery(25);
+//       car1.chargeBattery(25);
+//       car1.chargeBattery(25);
+//       car1.chargeBattery(25);
+//       car1.accelaration(25);
+//       console.log(car1)
+//      console.log(new Car(car1.make, car1.speed))
+
+      // const firstCar = new Car("Tata", 120);
+      // const secondCar = new Car("Mahindra", 120);
+
+      // firstCar.accelaration();
+      // firstCar.accelaration();
+      // firstCar.accelaration();
+      // firstCar.break();
+      // secondCar.accelaration();
+      // secondCar.accelaration();
+      // secondCar.accelaration();
+      // secondCar.break();
+
+      // class PrivateCar {
+
+      // constructor(make, speed) {
+      //   this.make = make;
+      //   this.speed = speed;
+      // }
+
+      // acceleration() {
+      // this.speed += 10
+      // return this.speed;
+      // }
+
+      // break ( ) {
+      // this.speed -= 5
+      // return this.speed;
+      // }
+
+      // get speedUs () {
+      // this.speed = this.speed/1.6;
+      //  return this.speed + ' mi/h';
+      // }
+
+      // set speedUs (inputSpeed) {
+      // this.speed = inputSpeed * 1.6;
+      // return this.speed + 'mi/h'
+      // }
+
+      // }
+
+      // const carOne = new PrivateCar('TATA' , 120) ;
+      // carOne.speedUs = 160;
+      // console.log(carOne.speed)
+      // console.log(carOne.acceleration())
+      // console.log(carOne.break())
+      // console.log(carOne)
+      // carOne.acceleration()
+      // carOne.break()
+
+      // ----------------------------------- PROTOTYPICAL INHERITENCE ---------------------------------
+
+      // function Administrator (firstName, secondName) {
+      // this.firstname = firstName
+      // this.secondName = secondName
+
+      // }
+
+      // Administrator.prototype.fullname =  function () {
+      //   console.log(this.firstname + ' ' + this.secondName)
+      // }
+
+      // function Manager (firstName, secondName) {
+      // this.firstname = firstName
+      // this.secondName = secondName
+      // }
+
+      // Manager.prototype = Object.create(Administrator.prototype)
+
+      // Manager.prototype.ageCalc =  function () {
+      //   console.log('Your age is 32 years')
+      // }
+
+      // Manager.prototype.constructor = Manager;
+
+      // const profileAdmn = new Administrator('Ranuj', 'Choudhary')
+      // const profileManager = new Manager('raneesh' , 'choudhary')
+
+      // console.log(profileManager instanceof Administrator)
+      // console.log(profileManager instanceof Manager)
+      // console.log(profileManager)
+
+      // console.log(profileManager)
+      // profileManager.fullname()
+class Person {
+
+ 
+
+
+}
+
+
+
+class Student {
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

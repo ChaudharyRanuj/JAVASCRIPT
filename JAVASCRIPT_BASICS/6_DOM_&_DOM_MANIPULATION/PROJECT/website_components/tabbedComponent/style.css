@@ -1,0 +1,16 @@
+.hide {
+  display: none;
+}
+
+.moveBtnUp {
+  transition: transform 90ms;
+  transform: translateY(-50%);
+}
+
+.outer-container {
+  position: relative;
+}
+.outerDiv {
+  position: absolute;
+  top: -25%;
+}

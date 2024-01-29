@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabbed Component</title>
+  <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+  
+  </head>
+  <body class="flex justify-center items-center text-white h-screen">
+    <div
+      class="outer-container w-1/2 bg-blue-800 border rounded-lg"
+      data-set="this outer container"
+    >
+      <div class="outerDiv flex justify-center gap-8 text-xl w-full">
+        <button
+          data-name="First"
+          class="moveBtnUp btn border rounded-md bg-blue-500 px-8 py-2"
+        >
+          FIRST
+        </button>
+        <button
+          data-name="Second"
+          class="btn border rounded-md bg-blue-500 px-8 py-2"
+        >
+          SECOND
+        </button>
+        <button
+          data-name="Third"
+          class="btn border rounded-md bg-blue-500 px-8 py-2"
+        >
+          THIRD
+        </button>
+      </div>
+      <div class="inner-container text-xl m-8">
+        <div class="divFirst divCont">
+          <b>This is first div</b>, Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Aperiam, unde mollitia! Vero cupiditate suscipit
+          rerum aliquid dolorem, delectus, excepturi deserunt, ipsa ipsum
+          quisquam asperiores iusto fuga! Quod libero nulla ipsum.
+        </div>
+        <div class="divSecond divCont hide">
+          <b>This is Second div</b>, Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Aperiam, unde mollitia! Vero cupiditate suscipit
+          rerum aliquid dolorem, delectus, excepturi deserunt, ipsa ipsum
+          quisquam asperiores iusto fuga! Quod libero nulla ipsum.
+        </div>
+        <div class="divThird divCont hide">
+          <b>This is third div</b>, Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Aperiam, unde mollitia! Vero cupiditate suscipit
+          rerum aliquid dolorem, delectus, excepturi deserunt, ipsa ipsum
+          quisquam asperiores iusto fuga! Quod libero nulla ipsum.
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

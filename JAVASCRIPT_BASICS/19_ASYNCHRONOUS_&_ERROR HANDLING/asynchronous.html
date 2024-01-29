@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script defer src="asynchronous.js"></script>
+  </head>
+
+  <body>
+    <h1>WHAT IS ASYNCHRONOUS CODE?</h1>
+    <p class="align-center">
+      Coordinating behaviour of a program over a period of time.
+    </p>
+    <p><b>Note:</b></p>
+    <ol>
+      <li>
+        Asynchronous code is executed after a task that runs in the 'background'
+        finishes.
+      </li>
+      <li>Asynchronous code is non-blocking.</li>
+      <li>
+        Excution doesn't wait for an asynchronous task to finish its work.
+      </li>
+      <li>Callback functions alone do not make code asynchronous.</li>
+    </ol>
+    <p><b> Examples:</b></p>
+    <ol>
+      <li>Image Loading</li>
+      <img class="image" src="thailand_image.webp" alt="" />
+    </ol>
+    <div class="ajax-call">
+      <p><b> AJAX CALLS</b></p>
+      <table class="data-table">
+        <tr>
+          <th>Company</th>
+          <th>Bike Name</th>
+          <th>City</th>
+          <th>Country Code</th>
+        </tr>
+      </table>
+    </div>
+    <div class="promises">
+      <p><b>PROMISES</b></p>
+      <table class="promises-data-table">
+        <tr>
+          <th>Company</th>
+          <th>Bike Name</th>
+          <th>City</th>
+          <th>Country Code</th>
+        </tr>
+      </table>
+    </div>
+    <button class="btn" onclick="requestPromise()">FETCH DATA</button>
+    <br />
+    <h2>USING ASYNC AWAIT</h2>
+    <div class="image-box">
+    
+    </div>
+    
+  </body>
+</html>

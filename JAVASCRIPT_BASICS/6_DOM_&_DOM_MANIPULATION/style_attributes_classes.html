@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - STYLE ATTRIBUTES CLASSES</title>
+    <style>
+      img {
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM - STYLE ATTRIBUTES CLASSES</h1>
+    <h2>this is heading two</h2>
+    <img
+      data-number-version="2.0"
+      name="this is image of swami vivekanand"
+      src="images/swami_vivekanand.jpg"
+      alt=""
+    />
+
+    <script>
+      const image = document.querySelector("img");
+      // CHANGING THE STYLE WITH SCRIPT
+
+      // CHANGING THE INLINE CSS
+
+      image.style.width = "700px";
+      //   image.style.height = "700px";
+      //   image.style.objectFit = "contain";
+
+      // ACCESSING THE STYLE WITH VALUE SET BY INTERNAL OR EXTERNAL CSS
+      console.log(getComputedStyle(image).height);
+
+      // SETTING THE COMPUTED STYLE
+      image.style.height =
+        Number(parseInt(getComputedStyle(image).height)) + 100 + "px";
+      console.log(image.style.height);
+
+      // CHANGING THE ATTRIBUTE WITH SCRIPT
+      // changing the alt of image
+      image.alt = "Quotes of swami vivekanand";
+
+      // absolute url
+      console.log(image.src);
+
+      // relative url
+      console.log(image.getAttribute("src"));
+
+      // Non Standard Attribute
+      console.log(image.getAttribute("name"));
+      image.setAttribute("image", "jpg image");
+
+      // Data Attributes
+      // DATASET OBJECT IS CREATE FOR EACH ELMENT SELCTED
+      console.log(image.dataset);
+
+      console.log(image.dataset.numberVersion);
+
+      // CLASSES
+      image.classList.add("c");
+      image.classList.remove("c");
+      image.classList.toggle("c");
+      image.classList.contains("c");
+    </script>
+  </body>
+</html>

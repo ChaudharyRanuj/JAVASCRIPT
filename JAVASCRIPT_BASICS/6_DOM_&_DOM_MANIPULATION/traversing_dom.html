@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- // children , descendants, Parent, Ancestors -->
+
+    <div class="main_div">
+      <!--  // Ancestors of element inside this div // Parent node of element -->
+      <div class="inner_div">First Child</div>
+      <!--// descendants & child of main_div // first_child  -->
+      <div>Second Child</div>
+      <!--// descendants & child of main_div // second_child  -->
+      <div>Third Child</div>
+      <!--// descendants & child of main_div // third_child  -->
+      <div>Fourth CHild</div>
+      <!--// descendants & child of main_div // last_child  -->
+    </div>
+
+    <script>
+
+// ---------------------------------- DOM Traversing ------------------------
+/* const h1 = document.querySelector('h1');
+
+// Going downwards: child
+console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes);
+console.log(h1.children);
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'orangered';
+
+// Going upwards: parents
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+h1.closest('h1').style.background = 'var(--gradient-primary)';
+
+// Going sideways: siblings
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = 'scale(0.5)';
+});
+
+
+ */
+
+
+      const main_div = document.querySelector(".main_div");
+      const inner_div = document.querySelector(".inner_div");
+
+      //   ----------------- SELECTING THE CHILD OF THE PARENT ELEMENT --------------
+
+      // selecting the first child node
+      main_div.firstChild;
+
+      // select the first element node
+      main_div.firstElementChild;
+
+      // select the last child element and last text node
+
+      main_div.lastChild; // select last node i.e text node
+
+      main_div.lastElementChild; // select the last element node
+
+      // ------------------------ SELECTING THE SIBLINGS OF PARENT CHILD ELEMENTS --------
+      inner_div.nextSibling;
+      inner_div.nextElementSibling;
+      inner_div.previousSibling;
+      inner_div.previousElementSibling;
+
+      // ------------------------ SELECTING THE PARENT NODE OR PARENT ELEMENT -------------
+
+      main_div.parentNode;
+      main_div.parentElement;
+      main_div.closest();
+    </script>
+  </body>
+</html>

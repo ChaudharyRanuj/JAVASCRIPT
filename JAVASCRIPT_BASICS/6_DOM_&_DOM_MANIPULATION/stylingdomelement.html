@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .changeColor {
+        background-color: aqua;
+        color: black;
+      }
+
+      .innerDiv {
+        background-color: burlywood;
+      }
+
+      .elementToHide {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="global_div flex justify-center items-baseline bg-yellow-200 min-h-screen pt-16"
+    >
+      <div class="inner_div flex gap-6 font-bold">
+        <div class="border border-black p-8">
+          <h2>Change Color</h2>
+          <p
+            class="p_change_color mt-4 text-center w-32 bg-green-400 py-4 box-border"
+            id="playerChance"
+          >
+            ROCK
+          </p>
+          <p
+            class="p_change_color_toggle mt-4 text-center w-32 py-4 box-border"
+            id="playerChance"
+          >
+            ROCK
+          </p>
+        </div>
+        <div class="w-96">
+          <h1 class="underline text-center text-2xl">STYLING DOM ELEMENTS</h1>
+          <marquee class="text-center" id="gameStatus">Click to Change</marquee>
+          <p class="text-center font-bold text-2xl mt-2" id="winnerStatus"></p>
+          <button
+            class="change_color m-auto block bg-blue-300 px-5 py-2 rounded-xl mt-6 hover:text-white hover:bg-blue-600 duration-200"
+          >
+            Change Color
+          </button>
+          <button
+            class="clickToHide m-auto block bg-blue-300 px-5 py-2 rounded-xl mt-6 hover:text-white hover:bg-blue-600 duration-200"
+          >
+            Hide Unhide
+          </button>
+          <button
+            class="toggleToColor m-auto block bg-blue-300 px-5 py-2 rounded-xl mt-6 hover:text-white hover:bg-blue-600 duration-200"
+          >
+            Toggle Color
+          </button>
+          <button
+            class="toggleToHide m-auto block bg-blue-300 px-5 py-2 rounded-xl mt-6 hover:text-white hover:bg-blue-600 duration-200"
+          >
+            Toggle Hide
+          </button>
+        </div>
+        <div class="border border-black p-8">
+          <h2>Hide Element</h2>
+          <p
+            class="hideRightPara mt-4 text-center w-32 bg-purple-400 text-black py-4 box-border"
+            id="computerChance"
+          >
+            SCISSOR
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // ------ global_div, inner_div, replace with, .innerDiv, .globalDiv  ----
+
+      const change_color = document.querySelector(".change_color");
+      const hide_element = document.querySelector(".change_color");
+      const p_change_color = document.querySelector(".p_change_color");
+      const p_change_color_toggle_button = document.querySelector(
+        ".p_change_color_toggle"
+      );
+      const clickToHide = document.querySelector(".clickToHide");
+      const hideRightParagraph = document.querySelector(".hideRightPara");
+      const toggleToColorButton = document.querySelector(".toggleToColor");
+      const toggleToHide = document.querySelector(".toggleToHide");
+
+      // ----------------------- CHANGE ELEMETN COLOR USING CLASSLIST ----------------------
+      let colorToggle = true;
+      change_color.addEventListener("click", () => {
+        if (colorToggle === true) {
+          p_change_color.style.backgroundColor = "red";
+          p_change_color.style.color = "white";
+          colorToggle = false;
+        } else if (colorToggle === false) {
+          p_change_color.style.backgroundColor = "blue";
+          p_change_color.style.color = "white";
+          colorToggle = true;
+        }
+      });
+
+      // -------------------- HIDE ELEMENT USING CLASSLIST ---------------------------
+
+      // classList.add('name of class to add') & classList.remove('name of class to remove')
+
+      let hideElement = true;
+      clickToHide.addEventListener("click", () => {
+        if (hideElement === true) {
+          hideRightParagraph.classList.add("elementToHide");
+          hideElement = false;
+        } else if (hideElement === false) {
+          hideRightParagraph.classList.remove("elementToHide");
+          hideElement = true;
+        }
+      });
+
+      // ---------------------- USING TOGGLE PROPERTY TO CHANGE COLOR AND HIDE THE ELEMENT -----------------
+
+      // ----------------------- CHANGE COLOR SCRIPT ----------------------
+
+      toggleToColorButton.addEventListener("click", () => {
+        p_change_color_toggle_button.classList.toggle("changeColor");
+      });
+
+      // -------------------- HIDE ELEMENT SCRIPT ---------------------------
+
+      toggleToHide.addEventListener("click", () => {
+        hideRightParagraph.classList.toggle("elementToHide");
+      });
+    </script>
+  </body>
+</html>

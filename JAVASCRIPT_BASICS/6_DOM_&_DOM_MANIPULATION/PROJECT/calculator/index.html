@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      input {
+        display: block;
+        width: 100%;
+        height: 2em;
+        margin: 0 auto;
+      }
+      input:active {
+        border-color: blueviolet;
+      }
+      .inputDiv {
+        width: 90%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center h-screen bg-blue-800 gap-4">
+    <div class="w-96 h-auto bg-blue-500 p-4 border-4  rounded-md">
+      <h1 class="text-4xl text-center">Calculator</h1>
+      <div class="p-4 flex flex-wrap justify-evenly gap-4">
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          1
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          2
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          3
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          4
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          5
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          4
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          7
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          8
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          9
+        </button>
+        <button id="numberOne" class="bg-blue-200 p-4 border rounded-md">
+          0
+        </button>
+      </div>
+      <div class="p-4 flex flex-wrap gap-2 justify-evenly">
+        <button
+          id="numberOne"
+          class="text-4xl bg-blue-200 p-4 flex items-center border rounded-md"
+        >
+          +
+        </button>
+        <button
+          id="numberOne"
+          class="text-4xl bg-blue-200 p-4 flex items-center border rounded-md"
+        >
+          *
+        </button>
+        <button
+          id="numberOne"
+          class="text-4xl bg-blue-200 p-4 flex items-center border rounded-md"
+        >
+          /
+        </button>
+        <button
+          id="numberOne"
+          class="text-4xl bg-blue-200 p-4 flex items-center border rounded-md"
+        >
+          *
+        </button>
+      </div>
+      <div class="inputDiv">
+        <input class="px-4 py-2" type="text" />
+        <button
+          id="submitBtn"
+          class="text-4xl bg-blue-200 px-8 py-2 mt-2 block m-auto text-center flex items-center border rounded-md"
+        >
+          Submit
+        </button>
+        <button
+          id="deleteBtn"
+          class="text-4xl bg-blue-200 px-8 py-2 mt-2 block m-auto text-center flex items-center border rounded-md"
+        >
+          ⬅
+        </button>
+        <button
+          id="clearBtn"
+          class="text-4xl bg-blue-200 px-8 py-2 mt-2 block m-auto text-center flex items-center border rounded-md"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const numberBtn = document.querySelectorAll("#numberOne");
+      const inputBox = document.querySelector("input");
+      const submitBtn = document.querySelector("#submitBtn");
+      const deleteBtn = document.querySelector("#deleteBtn");
+      const history  = []
+
+      let sum = "";
+      const addingString = function () {
+        sum += this.innerText;
+        inputBox.value = sum;
+      };
+
+      const deleteLastValue = function () {
+        sum = sum.slice(0, sum.length - 1);
+        inputBox.value = sum;
+      };
+
+      const result = function () {
+        const value = eval(inputBox.value);
+        inputBox.value = value;
+        history.push(value)
+        console.log(`The output is : ${value}`);
+        console.log('History of outputs: ' + history);
+      };
+
+      const clearValue = function () {
+        inputBox.value = "";
+        sum = "";
+      };
+
+      submitBtn.addEventListener("click", result);
+      clearBtn.addEventListener("click", clearValue);
+      deleteBtn.addEventListener("click", deleteLastValue);
+      numberBtn.forEach((ele) => ele.addEventListener("click", addingString));
+
+      
+    </script>
+  </body>
+</html>
