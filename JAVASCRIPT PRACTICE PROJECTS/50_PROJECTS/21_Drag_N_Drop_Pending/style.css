@@ -1,0 +1,53 @@
+* {
+  /* box-sizing: border-box; */
+}
+
+/* GLOBAL */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+/* EMPTY ELEMENT */
+
+.empty {
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid #333;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* FILL ELEMENT */
+
+.fill {
+  background-image: url("photo.jpg");
+  background-size: 96% 96%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 9.6rem;
+  height: 9.6rem;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.hold {
+  border: 2px solid #000000;
+}
+
+.invisible {
+display: none;  
+}
