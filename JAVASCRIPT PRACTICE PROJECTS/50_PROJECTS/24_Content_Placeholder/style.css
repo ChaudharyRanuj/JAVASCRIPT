@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Rubik:ital,wght@0,400;0,600;0,700;1,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+}
+
+.card-header {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header img {
+  height: 90%;
+  width: 70%;
+  display: block;
+}
+
+.card-content {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.card-title {
+ 
+  height: 20px;
+  margin: 0;
+}
+
+.card-excerpt {
+  color: #777;
+  margin: 10px 0 20px;
+}
+
+.author {
+  display: flex;
+}
+
+#profile_img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  width: 150px;
+}
+
+.author-info small {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.skeleton{
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.text-height {
+  height: 10px;
+}
+
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgb(206, 211, 211);
+  }
+  100% {
+    background-color: rgb(243, 237, 237);
+  }
+}
