@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #222;
+  padding-bottom: 30px;
+  position: relative;
+}
+/* NAVBAR */
+
+nav {
+  background-color: #7a7878cd;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding-right: 20px;
+  color: #eeeded;
+}
+.on-scroll nav{
+color: rgb(209, 209, 209);
+background-color: #222;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+nav img {
+  display: block;
+  background-color: transparent;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  flex-grow: 1;
+  font-size: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HERO SECTION */
+header {
+  background-image: url("office.jpg");
+}
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  opacity: 30%;
+  z-index: 1;
+}
+
+.hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+}
