@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge two Array</title>
+    <script defer src="5-merge-two-array.js"></script>
+    <style>
+      body {
+        font-size: 24px;
+        color: #333;
+      }
+      span {
+        font-size: 14px;
+        display: block;
+      }
+
+      .arrays {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .left,
+      .right {
+        padding: 32px;
+      }
+      h1 {
+        font-size: 44px;
+        margin-bottom: 0;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .table-row {
+        margin: 24px;
+      }
+
+      button {
+        padding: 10px 16px;
+        font-weight: 600;
+        font-size: 18px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Merge two Array</h1>
+    <div class="arrays">
+      <div class="left">
+        <h2>Merge two array by push method</h2>
+        <p><b>Array 1st: </b> [1, 2, 3, 4, 5, 6]</p>
+        <p><b>Array 2nd: </b> [7, 8, 9, 10, 11, 12]</p>
+        <ul id="array-elements"></ul>
+        <button type="button" id="merge-by-push">Merge By Push Method</button>
+        <p id="update-push-merge"></p>
+      </div>
+
+      <div class="right">
+        <h2>Merge using spread operator</h2>
+        <p><b>Array 1st: </b> [1, 2, 3, 4, 5, 6]</p>
+        <p><b>Array 2nd: </b> [7, 8, 9, 10, 11, 12]</p>
+        <ul id="array-elements"></ul>
+        <button type="button" id="merge-by-spread">Merge by Spread Operator</button>
+        <p id="update-spread-merge"></p>
+      </div>
+    </div>
+    <div class="arrays">
+      <div class="left">
+        <h2>Merge using loop</h2>
+        <p><b>Array 1st: </b> [1, 2, 3, 4, 5, 6]</p>
+        <p><b>Array 2nd: </b> [7, 8, 9, 10, 11, 12]</p>
+        <ul id="array-elements"></ul>
+        <button type="button" id="merge-by-loop">Merge Arrays by Loop</button>
+        <p id="update-loop-merge"></p>
+      </div>
+
+      <div class="right">
+        <h2>Merge using Array Concat Method</h2>
+        <p><b>Array 1st: </b> [1, 2, 3, 4, 5, 6]</p>
+        <p><b>Array 2nd: </b> [7, 8, 9, 10, 11, 12]</p>
+        <ul id="array-elements"></ul>
+        <button type="button" id="merge-by-array-method">Merge Arrays by Array Method</button>
+        <p id="update-by-array-method"></p>
+      </div>
+    </div>
+
+    <div class="arrays">
+      <div class="left">
+        <h2>Merge using While loop</h2>
+        <p><b>Array 1st: </b> [1, 2, 3, 4, 5, 6]</p>
+        <p><b>Array 2nd: </b> [7, 8, 9, 10, 11, 12]</p>
+        <ul id="array-elements"></ul>
+        <button type="button" id="merge-by-while-loop">Merge using While loopmerge-by-while-loop</button>
+        <p id="update-by-while-loop"></p>
+      </div>
+
+      <!-- <div class="right">
+        <h2>Merge using While loop</h2>
+        <p><b>Array 1st: </b> [1, 2, 3, 4, 5, 6]</p>
+        <p><b>Array 2nd: </b> [7, 8, 9, 10, 11, 12]</p>
+        <ul id="array-elements"></ul>
+        <button type="button" id="merge-by-while-loop">Merge Arrays While loop</button>
+        <p id="update-by-while-loop"></p>
+      </div> -->
+    </div>
+  </body>
+</html>
