@@ -234,3 +234,19 @@
 // console.log(queue.deQueue());
 // console.log(queue);
 
+// LINKED LIST
+
+/*
+POP
+PUSH
+SHIFT
+UNSHIFT
+GET
+INSERT
+REMOVE
+REVERSE
+PRINT
+
+
+*/
+

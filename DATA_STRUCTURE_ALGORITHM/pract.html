@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Node {
+        constructor(value) {
+          this.value = value;
+          this.next = null;
+        }
+      }
+
+      class SinglyLinkedList {
+        constructor() {
+          this.head = null;
+          this.tail = null;
+          this.length = 0;
+        }
+
+        push(value) {
+          const node = new Node(value);
+          if (!this.head) {
+            this.head = node;
+            this.tail = this.head;
+          } else {
+            this.tail.next = node;
+            this.tail = node;
+          }
+          this.length++;
+          return this;
+        }
+
+        pop() {
+          if (!this.head) return undefined;
+          let curr = this.head;
+          let newTail = curr;
+          while (curr.next) {
+            newTail = curr;
+            curr = curr.next;
+          }
+          this.tail = newTail;
+          this.tail.next = null;
+          this.length--;
+          if (this.length === 0) {
+            this.tail = null;
+            this.head = null;
+          }
+          return curr.value;
+        }
+
+        shift() {
+          if (!this.head) return undefined;
+          const curr = this.head;
+          this.head = curr.next;
+          this.length--;
+          if (this.length === 0) {
+            this.tail = null;
+          }
+          return curr.value;
+        }
+
+        unShift(value) {
+          const node = new Node(value);
+          if (!this.head) {
+            this.head = node;
+            this.tail = this.head;
+          } else {
+            let curr = this.head;
+            this.head = node;
+            this.head.next = curr;      
+          }
+          this.length++
+          return this;
+        }
+      }
+
+      const singlyLinkedList = new SinglyLinkedList();
+      console.log(singlyLinkedList);
+      singlyLinkedList.push(1000);
+      singlyLinkedList.push(2000);
+      singlyLinkedList.push(3000);
+      console.log(singlyLinkedList);
+      singlyLinkedList.pop();
+      // // singlyLinkedList.pop();
+      // // singlyLinkedList.pop();
+      // console.log(singlyLinkedList.shift());
+      // console.log(singlyLinkedList.shift());
+      singlyLinkedList.unShift('unshift')
+      singlyLinkedList.unShift('unshift')
+      singlyLinkedList.unShift('unshift')
+      singlyLinkedList.unShift('unshift')
+      singlyLinkedList.unShift('unshift')
+      console.log(singlyLinkedList);
+    </script>
+  </body>
+</html>
