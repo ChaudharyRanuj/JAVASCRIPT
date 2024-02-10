@@ -1,0 +1,28 @@
+.star {
+  width: 20px;
+  height: 20px;
+  /* background-color: rgba(242, 242, 72, 0.811); */
+  background-color: rgba(134, 134, 130, 0.811);
+
+  border: 2px solid black;
+}
+
+.star-fill {
+  background-color: rgba(242, 242, 72, 0.811);
+}
+
+#rating {
+  display: flex;
+
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.alert {
+  color: red;
+  font-size: 12px;
+}
+
+.start-app {
+  display: none;
+}
