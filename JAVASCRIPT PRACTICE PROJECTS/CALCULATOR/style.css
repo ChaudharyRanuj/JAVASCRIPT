@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #333;
 }
 
 .calculator {
@@ -29,7 +30,7 @@ body {
 .result {
   position: absolute;
   right: 40px;
-  bottom: 36px;
+  bottom: 32px;
   font-size: 28px;
   
 }
@@ -42,7 +43,8 @@ body {
   font-size: 32px;
   background-color: white;
   padding-left: 10px;
-  color: blue;
+  color: black;
+  font-weight: bold;
 }
 
 .input-btn-container {

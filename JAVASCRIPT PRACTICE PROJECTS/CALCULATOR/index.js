@@ -14,6 +14,7 @@ const calResult = document.querySelector(".result");
 let input = "";
 let result = "";
 output.style.backgroundColor = "green";
+
 // EVENT HANDLERS
 
 operationBtn.forEach((ele) =>
@@ -68,8 +69,8 @@ numberBtn.forEach((ele) =>
       output.value = "Not valid input";
       input = input.slice(0, input.length - 1);
     }
-
-    calResult.innerText = `= ${eval(input)}`;
+   
+    calResult.innerText = `= ${eval(input).toFixed(2)}`;
 
     output.value = input;
   })
@@ -79,16 +80,18 @@ resetBtn.addEventListener("click", function () {
   output.value = "reseting...";
 
   setTimeout(() => {
-    calResult.innerText = "=";
+    calResult.innerText = "";
     output.value = "Reset complete 👍";
     setTimeout(() => {
       output.value = "";
       input = "";
-    }, 2000);
-  }, 1000);
+   
+    }, 700);
+  }, 500);
 });
 
 equal.addEventListener("click", function () {
+  calResult.innerHTML = ''
   output.value = "calculating...";
   // check if valid input
   if (input.length < 3) {
@@ -99,8 +102,8 @@ equal.addEventListener("click", function () {
       setTimeout(() => {
         output.value = "";
         input = "";
-      }, 2000);
-    }, 1000);
+      }, 200);
+    }, 100);
     return;
   }
 
@@ -118,6 +121,6 @@ equal.addEventListener("click", function () {
   }
 
   setTimeout(() => {
-    output.value = `${Math.floor(eval(input))}`;
+    output.value = `${eval(input).toFixed(2)}`;
   }, 300);
 });
