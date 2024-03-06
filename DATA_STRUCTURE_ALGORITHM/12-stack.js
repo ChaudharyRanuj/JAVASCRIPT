@@ -1,21 +1,6 @@
-// /*
-// BIG OF STACKS
+// ****************************************** STACK *************************************************
 
-// Uses:
-/*
-*Used By Javascript Engine of webbrowser
-
-
-Stack
-
-
-
-
-
-
-*/
-
-
+//******* BIG (O) **********
 // INSERTION -  O(1)
 // REMOVAL -  O(1)
 // SEARCHING -  O(N)
@@ -71,4 +56,3 @@ Stack
 // console.log(newStack.pop());
 // console.log(newStack.pop());
 // console.log(newStack);
-
