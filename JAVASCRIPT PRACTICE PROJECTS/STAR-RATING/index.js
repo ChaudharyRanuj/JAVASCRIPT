@@ -7,16 +7,6 @@ input.value = 0;
 
 let STAR_RATING = 0;
 
-function createStars(noOfStars) {
-  for (let i = 0; i < noOfStars; i++) {
-    const starEle = document.createElement("div");
-    starEle.classList.add("star");
-    starEle.dataset.indexNumber = i + 1;
-    rating.appendChild(starEle);
-  }
-  const star = Array.from(document.querySelectorAll(".star"));
-  return star;
-}
 
 function printStars(noOfStars) {
   rating.innerHTML = "";
@@ -32,6 +22,19 @@ function printStars(noOfStars) {
       addColorOnMouseOver(e.target.dataset.indexNumber);
     })
   );
+
+
+  function createStars(noOfStars) {
+    for (let i = 0; i < noOfStars; i++) {
+      const starEle = document.createElement("div");
+      starEle.classList.add("star");
+      starEle.dataset.indexNumber = i + 1;
+      rating.appendChild(starEle);
+    }
+    const star = Array.from(document.querySelectorAll(".star"));
+    return star;
+  }
+  
 
   function addColorOnMouseOver(index) {
     stars.forEach((ele) => {
@@ -61,7 +64,6 @@ function printStars(noOfStars) {
 
 function startApplication(input) {
   rating.innerHTML = "";
-
   //
   input.addEventListener("input", (e) => {
     const stars = document.querySelectorAll(".star");
