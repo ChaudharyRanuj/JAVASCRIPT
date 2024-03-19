@@ -7,7 +7,6 @@
 
 // PrintNo(10)
 
-
 // // 2) Print first numbers from 1 to N numbers
 // function PrintNo(start, end) {
 //   if(start > end) {
@@ -16,10 +15,8 @@
 //   console.log(start)
 //   PrintNo(start + 1, end)
 //   }
-  
+
 //   PrintNo(1, 10)
-
-
 
 // 3) Print number from 1 to N with back tracking;
 
@@ -30,7 +27,6 @@
 // }
 
 // PrintWithBackTrack(5)
-
 
 // 4) Reverse Array
 // const arr = [1,2,3,4,5]
@@ -54,10 +50,12 @@
 //   reverseArr(i + 1,arr,n)
 //   }
 //   reverseArr(0,arr,arr.length)
-  
+
 //   console.log(arr);
-  
-// 5) Reverse Array
+
+// 5) Checking if string is Palindrom with recursion
+
+// 1st Approach from two pointer/
 
 // const str = 'adaada'
 
@@ -71,4 +69,40 @@
 // const statusIsPalindrom = findPalindrom(0, str, str.length - 1)
 // console.log(statusIsPalindrom);
 
+// 6) Multiple recursion call problem
+// const result = [];
+// let first;
+// let last;
+// function fibonacciNoAt(n) {
+//   if (n <= 1) {
+//     return n;
+//   }
+//   console.log(n);
+//   first = fibonacciNoAt(n - 1);
+//   last = fibonacciNoAt(n - 2);
+//   // result.push([first, last]);
+//   return first + last;
+// }
+// fibonacciNoAt(5);
+// console.log(fibonacciNoAt(5));
+// console.log(result);
 
+// 7) Subsequence with Recursion
+
+const arr = [1, 2, 3, 4, 5, 6];
+let SubSequence = [];
+let indx = 0;
+function printSubSequence(indx, SubSequence, arr) {
+  if (indx >= arr.length) {
+    console.log(SubSequence);
+    return;
+  }
+  SubSequence.push(arr[indx]);
+
+  printSubSequence(indx + 1, SubSequence, arr);
+
+  SubSequence.pop();
+
+  printSubSequence(indx + 1, SubSequence, arr);
+}
+printSubSequence(indx, SubSequence, arr)
