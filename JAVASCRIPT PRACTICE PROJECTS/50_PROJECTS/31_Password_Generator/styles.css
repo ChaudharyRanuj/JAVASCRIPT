@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 10, 56);
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.container {
+  background-color: rgb(18, 45, 79);
+  color: white;
+  padding: 10px;
+  width: 300px;
+  border-radius: 6px;
+}
+
+.result-container {
+  background-color: rgb(9, 36, 68);
+  position: relative;
+  margin: 10px 0;
+}
+
+#result {
+  background-color: transparent;
+  /* outline: none; */
+  border: none;
+  width: calc(100% - 40px);
+  height: 40px;
+  color: inherit;
+  padding-left: 6px;
+}
+#result:focus {
+  outline: none;
+}
+.clipboard-btn {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+  background-color: rgb(73, 151, 215);
+  border: none;
+}
+
+.clipboard-btn .fa-solid {
+  font-size: 18px;
+   color: rgb(27, 56, 124);
+  /* cursor: pointer; */
+}
+
+.setting {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#password-btn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgb(73, 151, 215);
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#password-length {
+  text-align: center;
+  width: 40px;
+  outline: none;
+  height: 30px;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  padding: 0;
+}
