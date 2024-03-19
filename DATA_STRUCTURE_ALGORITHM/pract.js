@@ -1,3 +1,4 @@
+"use strict";
 // const arr = [1,0,-1,0,-2,2].sort((a,b) => a - b);
 // const n = arr.length;
 // const result = [];
@@ -38,11 +39,13 @@ SPACE COMPLEXITY: O(n)
 //    const subSeq = arr.slice(i,j)
 //   //  console.log(subSeq);
 //   if(subSeq.length === 1 && subSeq[0] + subSeq[0] <= target) {
-//   console.log(subSeq);    
+//   console.log(subSeq);
 //   } else if(subSeq[0] + subSeq[subSeq.length - 1] <= target) {
 //     console.log(subSeq);
 //   }
-//   }  
+//   }
 // }
 
 
+x = 20
+var x
