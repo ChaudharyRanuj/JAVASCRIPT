@@ -279,30 +279,32 @@ Space complexity: O(n + m)
 // 2) Four sum with duplicates
 
 // Optimised
-const arr = [-2, -1, -1, 1, 1, 2, 2].sort((a, b) => a - b);
-const n = arr.length;
-let target = 0;
-const result = [];
+// const arr = [-2, -1, -1, 1, 1, 2, 2].sort((a, b) => a - b);
+// const n = arr.length;
+// let target = 0;
+// const result = [];
 
-for (let i = 0; i < n; i++) {
-  if (arr[i] === arr[i - 1] && i != 0) continue;
-  for (let j = i + 1; j < n; j++) {
-    if (arr[j] === arr[j - 1] && j != i + 1) continue;
-    let x = j + 1;
-    let y = n - 1;
-    while (x < y) {
-      let sum = arr[i] + arr[j] + arr[x] + arr[y];
-      if (sum < target) {
-        x++;
-      } else if (sum > target) {
-        y--;
-      } else {
-        result.push([arr[i], arr[j], arr[x], arr[y]]);
-        x++;
-        y--;
-        while (arr[x] === arr[x - 1] && x < y) x++;
-        while (arr[y] === arr[y + 1] && x < y) y--;
-      }
-    }
-  }
-}
+// for (let i = 0; i < n; i++) {
+//   if (arr[i] === arr[i - 1] && i != 0) continue;
+//   for (let j = i + 1; j < n; j++) {
+//     if (arr[j] === arr[j - 1] && j != i + 1) continue;
+//     let x = j + 1;
+//     let y = n - 1;
+//     while (x < y) {
+//       let sum = arr[i] + arr[j] + arr[x] + arr[y];
+//       if (sum < target) {
+//         x++;
+//       } else if (sum > target) {
+//         y--;
+//       } else {
+//         result.push([arr[i], arr[j], arr[x], arr[y]]);
+//         x++;
+//         y--;
+//         while (arr[x] === arr[x - 1] && x < y) x++;
+//         while (arr[y] === arr[y + 1] && x < y) y--;
+//       }
+//     }
+//   }
+// }
+
+
