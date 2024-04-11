@@ -203,3 +203,4 @@ insertionBtn.addEventListener("click", function (e) {
 //   return result;
 // }
 // const sortedArray = mergeSort([4, 5, 8, 6, 9, 7, 54, 9]);
+

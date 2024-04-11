@@ -1,4 +1,4 @@
-// 1) Print first numbers from N to 1 numbers
+//  Print first numbers from N to 1 numbers
 // function PrintNo(n) {
 // if(n < 1 ) return;
 // console.log(n)
@@ -7,7 +7,7 @@
 
 // PrintNo(10)
 
-// // 2) Print first numbers from 1 to N numbers
+//  Print first numbers from 1 to N numbers
 // function PrintNo(start, end) {
 //   if(start > end) {
 //     return;
@@ -18,7 +18,7 @@
 
 //   PrintNo(1, 10)
 
-// 3) Print number from 1 to N with back tracking;
+// Print number from 1 to N with back tracking;
 
 // function PrintWithBackTrack(n) {
 // if(n < 1) return
@@ -28,7 +28,7 @@
 
 // PrintWithBackTrack(5)
 
-// 4) Reverse Array
+// 2) Reverse Array
 // const arr = [1,2,3,4,5]
 
 // with two pointer approach
@@ -53,7 +53,7 @@
 
 //   console.log(arr);
 
-// 5) Checking if string is Palindrom with recursion
+// 3) Checking if string is Palindrom with recursion
 
 // 1st Approach from two pointer/
 
@@ -69,7 +69,7 @@
 // const statusIsPalindrom = findPalindrom(0, str, str.length - 1)
 // console.log(statusIsPalindrom);
 
-// 6) Multiple recursion call problem
+// 4) Multiple recursion call problem
 // const result = [];
 // let first;
 // let last;
@@ -87,22 +87,53 @@
 // console.log(fibonacciNoAt(5));
 // console.log(result);
 
-// 7) Subsequence with Recursion
+// 5) Subsequence with Recursion
 
-const arr = [1, 2, 3, 4, 5, 6];
+// const arr = [1, 2, 3];
+// let SubSequence = [];
+// let indx = 0;
+// let sum = 0;
+// let count = [];
+// function printSubSequence(indx, SubSequence, arr, count) {
+//   if (indx >= arr.length) {
+//     let sum = SubSequence.reduce((prev, curr) => prev + curr, 0);
+
+//     if (sum === 3) {
+
+//     }
+//     return;
+//   }
+//   SubSequence.push(arr[indx]);
+
+//   printSubSequence(indx + 1, SubSequence, arr, count);
+
+//   SubSequence.pop();
+
+//   printSubSequence(indx + 1, SubSequence, arr, count);
+// }
+// printSubSequence(indx, SubSequence, arr, count);
+
+// 6) Number of Subsequence with Sum K
+
+const arr = [1, 2, 3];
 let SubSequence = [];
 let indx = 0;
-function printSubSequence(indx, SubSequence, arr) {
+let sum = 0;
+let target = 3;
+function printSubSequence(indx, SubSequence, arr, sum, target) {
   if (indx >= arr.length) {
-    console.log(SubSequence);
-    return;
+    if (sum <= target) return 1;
+    return 0;
   }
   SubSequence.push(arr[indx]);
-
-  printSubSequence(indx + 1, SubSequence, arr);
+  sum += arr[indx];
+  let l = printSubSequence(indx + 1, SubSequence, arr, sum, target);
 
   SubSequence.pop();
+  sum -= arr[indx];
 
-  printSubSequence(indx + 1, SubSequence, arr);
+  let r = printSubSequence(indx + 1, SubSequence, arr, sum, target);
+
+  return l + r;
 }
-printSubSequence(indx, SubSequence, arr)
+console.log(printSubSequence(indx, SubSequence, arr, sum, target));
