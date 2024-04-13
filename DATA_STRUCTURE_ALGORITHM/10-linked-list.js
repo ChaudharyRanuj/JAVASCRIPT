@@ -160,9 +160,9 @@ class SinglyLinkedList {
   }
 }
 const newList = new SinglyLinkedList();
-newList.push(1);
-newList.push(2);
-newList.push(3);
-newList.push(4);
+let arr = [1,1,2,3,3]
+for(let i = 0 ; i < arr.length ;i++) {
+  newList.push(arr[i]);
+}
+
 console.log(newList);
-console.log(newList.reverse());
