@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(58, 58, 126);
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.replay {
+  padding: 4px 6px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.unhide {
+  display: block;
+  animation: scaleUp 0.5s ease-out forwards;
+}
+
+
+/* COUNTER */
+.counter {
+  overflow: hidden;
+  position: relative;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter span {
+  font-size: 50px;
+  transform-origin: bottom center;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transform: rotate(120deg);
+}
+.counter span.in {
+  transform: rotate(0deg);
+  animation: goIn 0.3s ease-in-out;
+}
+
+.counter span.out {
+  animation: goOut 0.3s ease-in-out;
+}
+
+/* ANIMATIONS */
+
+/* COUNTER */
+@keyframes goIn {
+  0% {
+    transform: rotate(120deg);
+  }
+
+  50% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes goOut {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(-120deg);
+  }
+}
+
+/* COUNTER END TEXT */
+
+@keyframes scaleUp {
+  100% {
+    transform: scale(200%);
+  }
+}
