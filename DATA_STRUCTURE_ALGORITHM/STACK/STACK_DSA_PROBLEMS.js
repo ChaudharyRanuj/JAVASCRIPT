@@ -139,55 +139,46 @@ Input
 
 */
 
-var MinStack = function () {
-  this.minStack = [],
-      this.stack = []
-};
+// var MinStack = function () {
+//   this.minStack = [],
+//       this.stack = []
+// };
 
-/** 
-* @param {number} val
-* @return {void}
-*/
-MinStack.prototype.push = function (val) {
-  // push value to minStack
-  if (this.minStack.length === 0) {
-      this.minStack.push(val)
-  } else {
-      // push value in min stack if val less than top element of min stack
-      let minElement = this.minStack[this.minStack.length - 1]
-      if (val <= minElement) {
-          this.minStack.push(val)
-      }
-  }
-  // push value to stack
-  this.stack.push(val)
 
-};
+// MinStack.prototype.push = function (val) {
+//   // push value to minStack
+//   if (this.minStack.length === 0) {
+//       this.minStack.push(val)
+//   } else {
+//       // push value in min stack if val less than top element of min stack
+//       let minElement = this.minStack[this.minStack.length - 1]
+//       if (val <= minElement) {
+//           this.minStack.push(val)
+//       }
+//   }
+//   // push value to stack
+//   this.stack.push(val)
 
-/**
-* @return {void}
-*/
-MinStack.prototype.pop = function () {
-  let poppedEle = this.stack.pop()
-  // if element removed from stack is equal to min value at top of minstack than pop
-  let minElement = this.minStack[this.minStack.length - 1]
-  if (poppedEle === minElement) {
-      this.minStack.pop()
-  }
-};
+// };
 
-/**
-* @return {number}
-*/
-MinStack.prototype.top = function () {
-  return this.stack[this.stack.length - 1]
-};
 
-/**
-* @return {number}
-*/
-MinStack.prototype.getMin = function () {
-  return this.minStack[this.minStack.length - 1]
-};
+// MinStack.prototype.pop = function () {
+//   let poppedEle = this.stack.pop()
+//   // if element removed from stack is equal to min value at top of minstack than pop
+//   let minElement = this.minStack[this.minStack.length - 1]
+//   if (poppedEle === minElement) {
+//       this.minStack.pop()
+//   }
+// };
+
+
+// MinStack.prototype.top = function () {
+//   return this.stack[this.stack.length - 1]
+// };
+
+
+// MinStack.prototype.getMin = function () {
+//   return this.minStack[this.minStack.length - 1]
+// };
 
 
