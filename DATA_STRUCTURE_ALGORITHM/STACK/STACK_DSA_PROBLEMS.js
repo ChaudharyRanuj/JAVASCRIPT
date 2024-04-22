@@ -270,4 +270,79 @@ let stack = []
    // reverse array as we pushed valued in ans from back side of array.
        return ans.reverse();
        */
-      
+
+// Q8.. Next Greater Element I (MEDIUM)
+//    Largest Rectangle in Histogram
+//    Solved
+//    Hard
+//    Topics
+//    Companies
+//    Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+// Input: heights = [2,1,5,6,2,3]
+// Output: 10
+// Explanation: The above is a histogram where width of each bar is 1.
+// The largest rectangle is shown in the red area, which has an area = 10 units.
+
+// BRUTE FORCE
+
+// OPTIMISED APPROACH
+var largestRectangleArea = function (heights) {
+  function nextLowestValues(heights) {
+    let stackNextLowest = [];
+    let nextLowest = [];
+    let resNext = { num: null, index: null };
+    for (let i = heights.length - 1; i >= 0; i--) {
+      while (
+        stackNextLowest.length > 0 &&
+        stackNextLowest[stackNextLowest.length - 1].num >= heights[i]
+      ) {
+        stackNextLowest.pop();
+      }
+      resNext =
+        stackNextLowest.length === 0
+          ? { num: heights[i], index: heights.length }
+          : stackNextLowest[stackNextLowest.length - 1];
+      nextLowest.push(resNext.index);
+      stackNextLowest.push({ num: heights[i], index: i });
+    }
+    return nextLowest.reverse();
+  }
+
+  function prevLowestValues(heights) {
+    let prevLowest = [];
+    let stackPrevLowest = [];
+    let resPrevLowest = { num: null, index: null };
+
+    let res = { num: null, index: null };
+    for (let i = 0; i < heights.length; i++) {
+      while (
+        stackPrevLowest.length > 0 &&
+        heights[i] <= stackPrevLowest[stackPrevLowest.length - 1].num
+      ) {
+        stackPrevLowest.pop();
+      }
+      res =
+        stackPrevLowest.length === 0
+          ? { num: heights[i], index: -1 }
+          : stackPrevLowest[stackPrevLowest.length - 1];
+      prevLowest.push(res.index);
+      stackPrevLowest.push({ num: heights[i], index: i });
+    }
+    return prevLowest;
+  }
+
+  function LargestRectangleArea(heights) {
+    let nextLowest = nextLowestValues(heights);
+    let prevLowest = prevLowestValues(heights);
+    let max = 0;
+
+    for (let i = 0; i < heights.length; i++) {
+      let area = (nextLowest[i] - prevLowest[i] - 1) * heights[i];
+      max = Math.max(max, area);
+    }
+    return max;
+  }
+
+  let maxArea = LargestRectangleArea(heights);
+  return maxArea;
+};
