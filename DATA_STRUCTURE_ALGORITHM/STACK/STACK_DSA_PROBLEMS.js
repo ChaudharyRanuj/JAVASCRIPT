@@ -286,63 +286,137 @@ let stack = []
 // BRUTE FORCE
 
 // OPTIMISED APPROACH
-var largestRectangleArea = function (heights) {
-  function nextLowestValues(heights) {
-    let stackNextLowest = [];
-    let nextLowest = [];
-    let resNext = { num: null, index: null };
-    for (let i = heights.length - 1; i >= 0; i--) {
-      while (
-        stackNextLowest.length > 0 &&
-        stackNextLowest[stackNextLowest.length - 1].num >= heights[i]
-      ) {
-        stackNextLowest.pop();
-      }
-      resNext =
-        stackNextLowest.length === 0
-          ? { num: heights[i], index: heights.length }
-          : stackNextLowest[stackNextLowest.length - 1];
-      nextLowest.push(resNext.index);
-      stackNextLowest.push({ num: heights[i], index: i });
-    }
-    return nextLowest.reverse();
-  }
 
-  function prevLowestValues(heights) {
-    let prevLowest = [];
-    let stackPrevLowest = [];
-    let resPrevLowest = { num: null, index: null };
+// var largestRectangleArea = function (heights) {
+//   function nextLowestValues(heights) {
+//     let stackNextLowest = [];
+//     let nextLowest = [];
+//     let resNext = { num: null, index: null };
+//     for (let i = heights.length - 1; i >= 0; i--) {
+//       while (
+//         stackNextLowest.length > 0 &&
+//         stackNextLowest[stackNextLowest.length - 1].num >= heights[i]
+//       ) {
+//         stackNextLowest.pop();
+//       }
+//       resNext =
+//         stackNextLowest.length === 0
+//           ? { num: heights[i], index: heights.length }
+//           : stackNextLowest[stackNextLowest.length - 1];
+//       nextLowest.push(resNext.index);
+//       stackNextLowest.push({ num: heights[i], index: i });
+//     }
+//     return nextLowest.reverse();
+//   }
 
-    let res = { num: null, index: null };
-    for (let i = 0; i < heights.length; i++) {
-      while (
-        stackPrevLowest.length > 0 &&
-        heights[i] <= stackPrevLowest[stackPrevLowest.length - 1].num
-      ) {
-        stackPrevLowest.pop();
-      }
-      res =
-        stackPrevLowest.length === 0
-          ? { num: heights[i], index: -1 }
-          : stackPrevLowest[stackPrevLowest.length - 1];
-      prevLowest.push(res.index);
-      stackPrevLowest.push({ num: heights[i], index: i });
-    }
-    return prevLowest;
-  }
+//   function prevLowestValues(heights) {
+//     let prevLowest = [];
+//     let stackPrevLowest = [];
+//     let resPrevLowest = { num: null, index: null };
 
-  function LargestRectangleArea(heights) {
-    let nextLowest = nextLowestValues(heights);
-    let prevLowest = prevLowestValues(heights);
-    let max = 0;
+//     let res = { num: null, index: null };
+//     for (let i = 0; i < heights.length; i++) {
+//       while (
+//         stackPrevLowest.length > 0 &&
+//         heights[i] <= stackPrevLowest[stackPrevLowest.length - 1].num
+//       ) {
+//         stackPrevLowest.pop();
+//       }
+//       res =
+//         stackPrevLowest.length === 0
+//           ? { num: heights[i], index: -1 }
+//           : stackPrevLowest[stackPrevLowest.length - 1];
+//       prevLowest.push(res.index);
+//       stackPrevLowest.push({ num: heights[i], index: i });
+//     }
+//     return prevLowest;
+//   }
 
-    for (let i = 0; i < heights.length; i++) {
-      let area = (nextLowest[i] - prevLowest[i] - 1) * heights[i];
-      max = Math.max(max, area);
-    }
-    return max;
-  }
+//   function LargestRectangleArea(heights) {
+//     let nextLowest = nextLowestValues(heights);
+//     let prevLowest = prevLowestValues(heights);
+//     let max = 0;
 
-  let maxArea = LargestRectangleArea(heights);
-  return maxArea;
-};
+//     for (let i = 0; i < heights.length; i++) {
+//       let area = (nextLowest[i] - prevLowest[i] - 1) * heights[i];
+//       max = Math.max(max, area);
+//     }
+//     return max;
+//   }
+
+//   let maxArea = LargestRectangleArea(heights);
+//   return maxArea;
+// };
+
+// Q9.. Evaluate Reverse Polish Notation
+// Medium
+
+// You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.
+
+// Evaluate the expression. Return an integer that represents the value of the expression.
+
+// Note that:
+
+// The valid operators are '+', '-', '*', and '/'.
+// Each operand may be an integer or another expression.
+// The division between two integers always truncates toward zero.
+// There will not be any division by zero.
+// The input represents a valid arithmetic expression in a reverse polish notation.
+// The answer and all the intermediate calculations can be represented in a 32-bit integer.
+
+// Example 1:
+
+// Input: tokens = ["2","1","+","3","*"]
+// Output: 9
+// Explanation: ((2 + 1) * 3) = 9
+// Example 2:
+
+// Input: tokens = ["4","13","5","/","+"]
+// Output: 6
+// Explanation: (4 + (13 / 5)) = 6
+// Example 3:
+
+// Input: tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+// Output: 22
+// Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+// = ((10 * (6 / (12 * -11))) + 17) + 5
+// = ((10 * (6 / -132)) + 17) + 5
+// = ((10 * 0) + 17) + 5
+// = (0 + 17) + 5
+// = 17 + 5
+// = 22
+
+// SOLUTION
+// function resolves(a, b, operator) {
+//   let res = "";
+//   if (operator === "*") {
+//     res = a * b;
+//   } else if (operator === "+") {
+//     res = a + b;
+//   } else if (operator === "/") {
+//     res = Math.trunc(a / b);
+//   } else if (operator === "-") {
+//     res = a - b;
+//   }
+//   return res;
+// }
+
+// var evalRPN = function (tokens) {
+//   let stack = [];
+//   for (let i = 0; i < tokens.length; i++) {
+//     let res = "";
+//     if (!isNaN(Number(tokens[i]))) {
+//       let number = parseInt(tokens[i]);
+//       stack.push(number);
+//     } else {
+//       let op2 = stack.pop();
+//       let op1 = stack.pop();
+
+//       let res = resolves(op1, op2, tokens[i]);
+//       stack.push(res);
+//     }
+//   }
+
+//   return stack[0];
+// };
+// console.log(evalRPN(tokens));
