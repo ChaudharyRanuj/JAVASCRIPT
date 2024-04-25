@@ -1,42 +1,66 @@
-// const nums1 = [2, 4],
-//   nums2 = [5, 15, 10, 8, 6, 12, 9, 18];
-// let stack = [];
-// let map = new Map();
-// let res = "";
-// for (let i = nums2.length - 1; i >= 0; i--) {
-//   while (stack.length > 0 && stack[stack.length - 1] <= nums2[i]) {
-//     stack.pop();
-//   }
-//   res = stack.length === 0 ? -1 : stack[stack.length - 1];
-//   map.set(nums2[i], res);
-//   stack.push(nums2[i]);
-// }
+class HashTable {
+  constructor(size = 26) {
+    this.data = new Array(size);
+    this.cache = {};
+  }
+  _hash(key) {
+    let hash = (key.toLowerCase().charCodeAt(0) * 23) % this.data.length;
+    return hash;
+  }
 
-// console.log(map);
-
-let tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
-let stack = [];
-for (let i = 0; i < tokens.length; i++) {
-  let res = "";
-  if (!isNaN(Number(tokens[i]))) {
-    let number = Number(tokens[i]);
-    stack.push(number);
-  } else {
-    let op2 = stack.pop();
-    let op1 = stack.pop();
-
-    if (tokens[i] === "*") {
-      res = op1 * op2;
-    } else if (tokens[i] === "+") {
-      res = op1 + op2;
-    } else if (tokens[i] === "/") {
-      res = op1 / Math.abs(op2);
-      } else if (tokens[i] === "-") {
-      res = op1 - op2;
+  set(key, value) {
+    let index = this._hash(key);
+    if (!this.data[index]) {
+      this.data[index] = [];
     }
+    this.data[index].push([key, value]);
+    return this.data[index];
+  }
 
-    stack.push(res);
+  get(key) {
+    if (this.cache[key]) {
+      console.log("cached value");
+      return this.cache[key];
+    }
+    let index = this._hash(key);
+    if (this.data[index]) {
+      for (let i = 0; i < this.data[index].length; i++) {
+        if (this.data[index][i][0] === key) {
+          this.cache[key] = this.data[index][i][1];
+          return this.data[index][i];
+        }
+      }
+    }
+  }
+
+  delete(key) {
+    let index = this._hash(key);
+    if (this.data[index]) {
+      for (let i = 0; i < this.data[index].length; i++) {
+        if (this.data[index][i][0] === key) {
+          return this.data[index].splice(i, 1);
+        }
+      }
+    }
   }
 }
-let ans = Math.trunc(stack[stack.length - 1]);
-console.log(ans);
+let hashObj = new HashTable();
+// console.log(
+//   hashObj.set("Pakistan", { population: 1.4, nationality: "Pakistann" })
+// );
+// console.log(
+//   hashObj.set("Indonesia", { population: 0.2, nationality: "Indonasian" })
+// );
+// console.log(hashObj.set("Iran", { population: 0.2, nationality: "Iranian" }));
+// console.log(hashObj.set("Iraq", { population: 0.2, nationality: "Iranqian" }));
+// console.log(hashObj.set("Zimabawe", { population: 0.2, nationality: "Zima" }));
+// console.log(hashObj.set("Serian", { population: 0.2, nationality: "Sera" }));
+// console.log(hashObj.set("Russia", { population: 0.2, nationality: "Russia" }));
+// console.log(hashObj.set("Nepal", { population: 0.2, nationality: "Nepal" }));
+// console.log(hashObj.get("Nepal"));
+// console.log(hashObj.get("Nepal"));
+// console.log(hashObj.get("Nepal"));
+// console.log(hashObj.get("Nepal"));
+// console.log(hashObj.get("Nepal"));
+// console.log(hashObj.get("Nepal"));
+// console.log(hashObj.get("Nepal"));

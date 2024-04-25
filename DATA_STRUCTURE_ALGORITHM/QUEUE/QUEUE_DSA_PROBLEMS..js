@@ -19,55 +19,6 @@
 // ************************************************ WITH ARRAYS ******************************************
 // APPROACH FIRST
 
-// var MyQueue = function () {
-//   this.input = [];
-//   this.output = [];
-// };
-
-// /**
-//  * @param {number} x
-//  * @return {void}
-//  */
-// MyQueue.prototype.push = function (x) {
-//   if (this.input.length === 0) {
-//     while (this.output.length > 0) {
-//       this.input.push(this.output.pop());
-//     }
-//   }
-//   this.input.push(x);
-// };
-
-// /**
-//  * @return {number}
-//  */
-// MyQueue.prototype.pop = function () {
-//   if (this.input.length === 0) {
-//     return this.output.pop();
-//   } else {
-//     let val = this.peek();
-//     this.output.pop();
-//     return val;
-//   }
-// };
-
-// /**
-//  * @return {number}
-//  */
-// MyQueue.prototype.peek = function () {
-//   while (this.input.length > 0) {
-//     this.output.push(this.input.pop());
-//   }
-//   return this.output[this.output.length - 1];
-// };
-
-// /**
-//  * @return {boolean}
-//  */
-// MyQueue.prototype.empty = function () {
-//   let status = this.input.length == 0 && this.output.length == 0 ? true : false;
-//   return status;
-// };
-
 // // OPTIMISED SOLUTION
 
 // var MyQueue = function () {
@@ -187,3 +138,99 @@ myStack.empty(); // return False
 // MyStack.prototype.empty = function () {
 //   return this.queue1.length == 0 && this.queue2.length == 0;
 // };
+
+// Q3. Reverse queue using recursion
+// Examples :
+
+// const q = [5, 24, 9, 6, 8, 4, 1, 8, 3, 6];
+// Output : Q = [6, 3, 8, 1, 4, 8, 6, 9, 24, 5]
+
+// Explanation : Output queue is the reverse of the input queue.
+
+// Input : Q = [8, 7, 2, 5, 1]
+
+// function reverseTheQueue(q) {
+//   if (q.length == 0) {
+//     return;
+//   }
+//   const ele = q[0];
+//   q.shift();
+//   reverseTheQueue(q);
+//   q.push(ele);
+//   return q;
+// }
+// reverseTheQueue(q);
+
+// Q4. Reverse First K elements of Queue
+// Examples :
+/*
+Given an integer K and a queue of integers, we need to reverse the order of the first K elements of the queue, leaving the other elements in the same relative order.
+
+Only following standard operations are allowed on queue.
+
+enqueue(x) : Add an item x to rear of queue
+dequeue() : Remove an item from front of queue
+size() : Returns number of elements in queue.
+front() : Finds front item.
+Note: The above operations represent the general processings. In-built functions of the respective languages can be used to solve the problem.
+
+Example 1:
+
+Input:
+5 3
+1 2 3 4 5
+Output: 
+3 2 1 4 5
+*/
+// class Queue {
+//   constructor() {
+//     this.arr = [];
+//     this.front = 0;
+//   }
+
+//   push(a) {
+//     this.arr.push(a);
+//   }
+
+//   pop() {
+//     if (this.arr.length != this.front) {
+//       let x = this.arr[this.front];
+//       this.front++;
+//       return x;
+//     } else return -1;
+//   }
+
+//   front_ele() {
+//     return this.arr[this.front];
+//   }
+
+//   empty() {
+//     if (this.arr.length != this.front) return false;
+//     else return true;
+//   }
+// }
+// let k = 3;
+// let q = new Queue();
+// q.push(1);
+// q.push(2);
+// q.push(3);
+// q.push(4);
+// q.push(5);
+
+// let stack = [];
+// for (let i = 0; i < k; i++) {
+//   let ele = q.front_ele();
+//   q.pop();
+//   stack.push(ele);
+// }
+// console.log(stack);
+// for (let i = 0; i < k; i++) {
+//   q.push(stack.pop());
+// }
+// let z = q.arr.length - q.front - k;
+
+// for (let i = 0; i < z; i++) {
+//   let ele = q.front_ele();
+//   q.pop();
+//   q.push(ele);
+// }
