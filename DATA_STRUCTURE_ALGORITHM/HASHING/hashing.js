@@ -103,7 +103,6 @@ SPACE COMPLEXITY : O(n)
 //   }
 // }
 
-
 // Q4. Subarray with 0 sum
 
 // Given an array of integers. Find if there is a subarray (of size at-least one) with 0 sum. You just need to return true/false depending upon whether there is a subarray present with 0-sum or not. Printing will be taken care by the driver code.
@@ -114,9 +113,7 @@ n = 5
 arr = {4,2,-3,1,6}
 */
 
-
-
-// OPTIMISED SOLUTION 
+// OPTIMISED SOLUTION
 
 // function subArrayExists(arr, n){
 //   // code here
@@ -129,7 +126,7 @@ arr = {4,2,-3,1,6}
 // if(sum === 0) return true;
 // if(set.has(sum)) {
 // return true;
-// } 
+// }
 
 // set.add(sum)
 // }
@@ -139,3 +136,42 @@ arr = {4,2,-3,1,6}
 
 // Time complexity O(n)
 // Space complexity O(n)
+
+// Q5. Subarray with 0 sum
+// Given an array of n names arr of candidates in an election, where each name is a string of lowercase characters. A candidate name in the array represents a vote casted to the candidate. Print the name of the candidate that received the maximum count of votes. If there is a draw between two candidates, then print lexicographically smaller name.
+
+// Example 1:
+
+// Input:
+// n = 13
+// arr[] = {john,johnny,jackie,johnny,john
+// jackie,jamie,jamie,john,johnny,jamie,
+// johnny,john
+
+// OPTIMISED SOLUTION
+// winner(votesCount, n){
+//   // code here
+//  let map = new Map();
+// let max = -1;
+// let name = '';
+// for (let i = 0; i < votesCount.length; i++) {
+// if (!map.has(votesCount[i])) {
+// map.set(votesCount[i], 1);
+// } else {
+// map.set(votesCount[i], map.get(votesCount[i]) + 1);
+// }
+// }
+// for (let [key, value] of map) {
+// if (value > max) {
+// max = Math.max(max, value);
+// name = key;
+// }
+// if (max === value) {
+// if (name > key) {
+// name = key;
+// }
+// }
+// }
+
+// return [name,max];
+// }
