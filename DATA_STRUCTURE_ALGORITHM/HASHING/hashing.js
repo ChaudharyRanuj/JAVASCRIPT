@@ -175,3 +175,147 @@ arr = {4,2,-3,1,6}
 
 // return [name,max];
 // }
+
+// Q5 Pairs with Positive Negative values
+// Easy
+// Matrix Partners India: Exclusive Job-A-Thon | Apply to 15+ Companies via 1 Hiring Challenge | Starting from 29th April onwards
+
+// banner
+// Given an array of integers, print all the pairs having positive and negative values of a number that exists in the array.
+
+// NOTE: If no such pair exists, simply return an empty array, also multiple pairs of the same number could exist and you need to print each of them separately.
+
+/*
+Input:
+n = 8
+a [ ] = {1, -3, 2, 3, 6, -1, -3, 3}
+Output:
+-1 1 -3 3 -3 3
+*/
+
+// first solution naive approach
+
+// const arr = [1, -1, 2, 3, 6, -1, -3, -2];
+
+// let map = new Map();
+// let negValMap = new Map();
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > 0) {
+//     if (map.has(arr[i])) {
+//       map.set(arr[i], map.get(arr[i]) + 1);
+//     } else {
+//       map.set(arr[i], 1);
+//     }
+//   }
+
+//   if (arr[i] < 0) {
+//     if (negValMap.has(arr[i])) {
+//       negValMap.set(arr[i], negValMap.get(arr[i]) + 1);
+//     } else {
+//       negValMap.set(arr[i], 1);
+//     }
+//   }
+// }
+// let ans = [];
+
+// for (let [key, value] of map) {
+//   let min = 0;
+//   if (negValMap.has(-key)) {
+//     min = Math.min(value, negValMap.get(-key));
+//     for (let i = 0; i < min; i++) {
+//     ans.push(Math.abs(key));
+//       ans.push(Math.abs(key));
+//     }
+//   }
+// }
+// const res = ans.map((ele, idx) => {
+//   if(idx % 2 == 0) {
+//     return -ele;
+//   } else {
+//     return ele;
+//   }
+// })
+
+// 2nd SOLUTION
+
+/*
+
+let map = new Map();
+let negVal = [];
+// make map with number count and get negative value in array
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > 0) {
+    if (map.has(arr[i])) {
+      map.set(arr[i], map.get(arr[i]) + 1);
+    } else {
+      map.set(arr[i], 1);
+    }
+  } else {
+    negVal.push(arr[i]);
+  }
+}
+// sort negative value
+negVal.sort((a, b) => a - b);
+
+let output = [];
+// iterate from end
+for (let i = negVal.length - 1; i >= 0; i--) {
+  let posValue = negVal[i] * -1;
+  if (map.get(posValue)) {
+    output.push(negVal[i], posValue);
+    map.set(posValue, map.get(posValue) - 1);
+  }
+}
+
+
+*/
+
+// 3rd Solution
+// MOST OPTIMISED
+// let arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19, 7, 19, 19, 17, 18].sort(
+//   (a, b) => a - b
+// );
+// let arr2 = [2, 1, 4, 3, 9, 6];
+// let set = new Set();
+
+// for (let ele of arr2) {
+//   set.add(ele);
+// }
+
+// let found = [];
+// let notFound = [];
+// for (let ele of arr1) {
+//   if (set.has(ele)) {
+//     found.push(ele);
+//   } else {
+//     notFound.push(ele);
+//   }
+// }
+
+// let map = new Map();
+
+// for (let ele of found) {
+//   if (map.has(ele)) {
+//     map.set(ele, map.get(ele) + 1);
+//   } else {
+//     map.set(ele, 1);
+//   }
+// }
+
+// let output = [];
+// for (let ele of arr2) {
+//   if (map.has(ele)) {
+//     let end = map.get(ele);
+//     for (let j = 0; j < end; j++) {
+//       output.push(ele);
+//     }
+//   }
+// }
+
+// for (let ele of notFound) {
+//   output.push(ele)
+// }
+
+// return output
+
