@@ -137,7 +137,7 @@ arr = {4,2,-3,1,6}
 // Time complexity O(n)
 // Space complexity O(n)
 
-// Q5. Subarray with 0 sum
+// Q5. Winner of Election
 // Given an array of n names arr of candidates in an election, where each name is a string of lowercase characters. A candidate name in the array represents a vote casted to the candidate. Print the name of the candidate that received the maximum count of votes. If there is a draw between two candidates, then print lexicographically smaller name.
 
 // Example 1:
@@ -176,7 +176,7 @@ arr = {4,2,-3,1,6}
 // return [name,max];
 // }
 
-// Q5 Pairs with Positive Negative values
+// Q6 Pairs with Positive Negative values
 // Easy
 // Matrix Partners India: Exclusive Job-A-Thon | Apply to 15+ Companies via 1 Hiring Challenge | Starting from 29th April onwards
 
@@ -240,9 +240,12 @@ Output:
 // 2nd SOLUTION
 
 /*
-
+// Positive value map with numbers counts
 let map = new Map();
+
+// Contains all values less than Zero
 let negVal = [];
+
 // make map with number count and get negative value in array
 for (let i = 0; i < arr.length; i++) {
   if (arr[i] > 0) {
@@ -255,19 +258,26 @@ for (let i = 0; i < arr.length; i++) {
     negVal.push(arr[i]);
   }
 }
-// sort negative value
+// sort negative value array
 negVal.sort((a, b) => a - b);
 
+
+// iterate from end in negVal array
+// Note: As array is sorted, the array largest value is at end so we have to loop from end
+// to get the sorted result in ouput array.
+
+
 let output = [];
-// iterate from end
 for (let i = negVal.length - 1; i >= 0; i--) {
   let posValue = negVal[i] * -1;
+  // if map has opposite of negVal than push the value its no of count in map
   if (map.get(posValue)) {
     output.push(negVal[i], posValue);
+    // decrease no of count after pushing the value to the output array.
     map.set(posValue, map.get(posValue) - 1);
   }
 }
-
+return output
 
 */
 
@@ -319,3 +329,209 @@ for (let i = negVal.length - 1; i >= 0; i--) {
 
 // return output
 
+// Q7 Relative Sort Array
+
+// let arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19];
+// let arr2 = [2, 1, 4, 3, 9, 6];
+
+// FIRST SOLUTION
+
+// let map = new Map();
+// let set = new Set();
+
+// for (let i = 0; i < arr2.length; i++) {
+//   set.add(arr2[i]);
+// }
+
+// let notFound = [];
+// for (let i = 0; i < arr1.length; i++) {
+//   if (map.has(arr1[i])) {
+//     map.set(arr1[i], map.get(arr1[i]) + 1);
+//   } else {
+//     map.set(arr1[i], 1);
+//   }
+
+//   if (!set.has(arr1[i])) {
+//     notFound.push(arr1[i]);
+//   }
+// }
+// console.log(map);
+// let ans = [];
+// for (let i = 0; i < arr2.length; i++) {
+//   if (map.get(arr2[i])) {
+//     console.log(map.get(arr2[i]));
+//    for (let j = 0 ;j < map.get(arr2[i]); j++) {
+//       ans.push(arr2[i]);
+//     }
+//   }
+// }
+// notFound.sort((a,b) => a -b)
+
+// ans = [...ans, ...notFound]
+// return ans;
+
+// // SECOND SOLUTION
+// let arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19, 7, 19, 19, 17, 18].sort(
+//   (a, b) => a - b
+// );
+// let arr2 = [2, 1, 4, 3, 9, 6];
+// let set = new Set();
+
+// for (let ele of arr2) {
+//   set.add(ele);
+// }
+
+// let found = [];
+// let notFound = [];
+// for (let ele of arr1) {
+//   if (set.has(ele)) {
+//     found.push(ele);
+//   } else {
+//     notFound.push(ele);
+//   }
+// }
+
+// let map = new Map();
+
+// for (let ele of found) {
+//   if (map.has(ele)) {
+//     map.set(ele, map.get(ele) + 1);
+//   } else {
+//     map.set(ele, 1);
+//   }
+// }
+
+// let output = [];
+// for (let ele of arr2) {
+//   if (map.has(ele)) {
+//     let end = map.get(ele);
+//     for (let j = 0; j < end; j++) {
+//       output.push(ele);
+//     }
+//   }
+// }
+
+// for (let ele of notFound) {
+//   output.push(ele)
+// }
+
+// return output
+
+// 4th solution
+// let arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19, 7, 19, 19, 17, 18].sort(
+//   (a, b) => a - b
+// );
+// let arr2 = [2, 1, 4, 3, 9, 6];
+// // create arr1 element count map
+// let map = new Map();
+// // create ordered map as arr is sorted
+// for (let ele of arr1) {
+//   if (map.has(ele)) {
+//     map.set(ele, map.get(ele) + 1);
+//   } else {
+//     map.set(ele, 1);
+//   }
+// }
+
+// let output = [];
+// for (let ele of arr2) {
+//   if (map.has(ele)) {
+//     let end = map.get(ele);
+//     for (let i = 0; i < end; i++) {
+//       output.push(ele);
+//       map.set(ele, map.get(ele) - 1);
+//     }
+//   }
+// }
+// // push remaining values
+// for (let pair of map) {
+//   let [key, value] = pair;
+//   if (value > 0) {
+//     for (let i = 0; i < value; i++) {
+//       output.push(key);
+//     }
+//   }
+// }
+// return output;
+
+// Q8  Custom Sort String
+
+// Medium
+// You are given two strings order and s. All the characters of order are unique and were sorted in some custom order previously.
+
+// Permute the characters of s so that they match the order that order was sorted. More specifically, if a character x occurs before a character y in order, then x should occur before y in the permuted string.
+
+// Return any permutation of s that satisfies this property.
+
+// let order = "hucw",
+//   s =
+//     "utzoampdgkalexslxoqfkdjoczajxtuhqyxvlfatmptqdsochtdzgypsfkgqwbgqbcamdqnqztaqhqanirikahtmalzqjjxtqfnh";
+
+// let map = new Map();
+
+// for (let i = 0; i < s.length; i++) {
+//   if (map.has(s[i])) {
+//     map.set(s[i], map.get(s[i]) + 1);
+//   } else {
+//     map.set(s[i], 1);
+//   }
+// }
+
+// // loop through order string to check character if exist in map
+// let output = "";
+// for (let i = 0; i < order.length; i++) {
+//   console.log(i);
+//   if (map.has(order[i])) {
+//     let count = map.get(order[i]);
+//     for (let j = 0; j < count; j++) {
+//       output += order[i];
+//       map.set(order[i], map.get(order[i]) - 1);
+//     }
+//   }
+// }
+
+// for (let [key, value] of map) {
+//   if (value > 0) {
+//     if (map.has(key)) {
+//       let count = map.get(key);
+//       for (let j = 0; j < count; j++) {
+//         output += key;
+//         map.set(key, map.get(key) - 1);
+//       }
+//     }
+//   }
+// }
+// return output;
+
+// Q9  Group Anagrams
+/*
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+Example 1:
+
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+*/
+// FIRST SOLUTION (OPTIMISED SOLUTION)
+// const strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+// strs.sort();
+// let map = new Map();
+
+// for (let ele of strs) {
+//   let sortedWord = ele.split("").sort().join("");
+
+//   if (!map.has(sortedWord)) {
+//     map.set(sortedWord, [ele]);
+//   } else {
+//     map.set(sortedWord, [...map.get(sortedWord), ele]);
+//   }
+// }
+
+// let output = [];
+// for (let [key, value] of map) {
+//   output.push(value);
+// }
+
+// return output;
