@@ -1,0 +1,47 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.testimonials {
+  width: 300px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.line {
+  width: 0px;
+  height: 4px;
+  background-color: green;
+  animation: 5s linear 1s infinite running slidein;
+}
+
+@keyframes slidein {
+  100% {
+    width: 290px;
+  }
+}
+
+/* TEXT AREA */
+
+.text-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person {
+  border: 2px solid blue;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 4px;
+}
+.person img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
