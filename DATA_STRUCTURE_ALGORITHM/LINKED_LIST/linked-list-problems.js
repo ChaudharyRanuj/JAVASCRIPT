@@ -1,7 +1,7 @@
 // Q1 Linked List Insertion
 // Basic
 
-// Create a link list of size N according to the given input literals. Each integer input is accompanied by an indicator which can either be 0 or 1. If it is 0, insert the integer in the beginning of the link list. If it is 1, insert the integer at the end of the link list. 
+// Create a link list of size N according to the given input literals. Each integer input is accompanied by an indicator which can either be 0 or 1. If it is 0, insert the integer in the beginning of the link list. If it is 1, insert the integer at the end of the link list.
 // Hint: When inserting at the end, make sure that you handle NULL explicitly.
 
 // Example 1:
@@ -30,3 +30,161 @@
 //       return head;
 //   }
 // }
+
+// Q2: Identical Linked Lists
+/*
+Given two Singly Linked List of N and M nodes respectively. The task is to check whether two linked lists are identical or not. 
+Two Linked Lists are identical when they have same data and with same arrangement too.
+
+Example 1:
+
+Input:
+LinkedList1: 1->2->3->4->5->6
+LinkedList2: 99->59->42->20
+Output: Not identical 
+*/
+// class Solution {
+//   //Function to check whether two linked lists are identical or not.
+//   areIdentical(head1, head2) {
+//     while (head1 !== null) {
+//       if (head1.data != head2.data) {
+//         return false;
+//       }
+//       head1 = head1.next;
+//       if (head1 === null && head2.next) {
+//         return false;
+//       }
+//       head2 = head2.next;
+//     }
+
+//     return true;
+//     //your code here
+//   }
+// }
+
+// Q3. Delete Node in a Linked List
+/*
+There is a singly-linked list head and we want to delete a node node in it.
+
+You are given the node to be deleted node. You will not be given access to the first node of head.
+
+All the values of the linked list are unique, and it is guaranteed that the given node node is not the last node in the linked list.
+
+Delete the given node. Note that by deleting the node, we do not mean removing it from memory. We mean:
+
+The value of the given node should not exist in the linked list.
+The number of nodes in the linked list should decrease by one.
+All the values before node should be in the same order.
+All the values after node should be in the same order.
+Custom testing:
+
+For the input, you should provide the entire linked list head and the node to be given node. node should not be the last node of the list and should be an actual node in the list.
+We will build the linked list and pass the node to your function.
+The output will be the entire list after calling your function.
+*/
+
+// 1st solution
+var deleteNode = function (node) {
+  let temp = node;
+  let current = temp;
+  while (temp.next !== null) {
+    current = temp;
+    temp = temp.next;
+    current.val = temp.val;
+  }
+  current.next = null;
+};
+
+// 2nd solution most optimised solution
+var deleteNode = function (node) {
+  node.val = node.next.val;
+  node.next = node.next.next;
+};
+
+// Q4. Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+/*
+Input: head = [1,1,2]
+Output: [1,2]
+*/
+
+// var deleteDuplicates = function (head) {
+//   let current = head;
+//   while (current && current.next) {
+//     if (current.val === current.next.val) {
+//       current.next = current.next.next;
+//     } else {
+//       current = current.next;
+//     }
+//   }
+
+//   return head;
+// };
+
+// Q5. Remove duplicates from an unsorted linked list
+
+// Given an unsorted linked list of N nodes. The task is to remove duplicate elements from this unsorted Linked List. When a value appears in multiple nodes, the node which appeared first should be kept, all others duplicates are to be removed.
+
+// class Solution {
+//   //Function to remove duplicates from unsorted linked list.
+//   removeDuplicates(head) {
+//     //your code here
+//     let set = new Set();
+//     let temp = head;
+//     let current = head;
+
+//     while (temp != null) {
+//       if (set.has(temp.data)) {
+//         current.next = temp.next;
+//       } else {
+//         current = temp;
+//       }
+
+//       if (!set.has(temp.data)) {
+//         set.add(temp.data);
+//       }
+
+//       temp = temp.next;
+//     }
+
+//     return head;
+//   }
+// }
+
+// Q6 Merge Two Sorted Lists
+
+// Easy
+// Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+// Return the head of the merged linked list.
+
+// var mergeTwoLists = function(list1, list2) {
+//   let result  = new ListNode(-1)
+//   let dummy = result
+
+//   while(list1 && list2) {
+//       if(list1.val <= list2.val) {
+//           result.next = new ListNode(list1.val)
+//           result = result.next
+//           list1 = list1.next
+//       }
+// if(list1 === null) break;
+//       if(list2.val <= list1.val) {
+//             result.next = new ListNode(list2.val)
+//           result = result.next
+//           list2 = list2.next
+//       }
+
+//   }
+
+// while(list1) {
+//         result.next = new ListNode(list1.val)
+//           result = result.next
+//           list1 = list1.next
+// }
+// while(list2) {
+//         result.next = new ListNode(list2.val)
+//           result = result.next
+//           list2 = list2.next
+// }
+
+// return dummy.next
+// };
