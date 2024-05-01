@@ -192,6 +192,7 @@ Output: [1,2]
 // Q7 Remove Nth Node From End of List
 //  Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
+// FIRST APPROACH
 
 // var removeNthFromEnd = function (head, n) {
 //   function findLenghtOfList(head) {
@@ -226,4 +227,26 @@ Output: [1,2]
 //     prev.next = node.next;
 //   }
 //   return head;
+// };
+
+
+// OPTIMISED SOLUTION
+// HINT MAKE SLOW FAST POINTER AT GAP OF n (position of node from back)
+// var removeNthFromEnd = function(head, n) {
+//   let slow = head;
+//   let fast = head;
+//   while(n--) {
+//    fast = fast.next
+//   }
+//   if(fast === null) {
+//    return slow.next;
+//   }
+
+// while(fast.next !== null) {
+//    slow = slow.next
+//    fast = fast.next
+// }
+// slow.next = slow.next.next
+
+// return head;
 // };
