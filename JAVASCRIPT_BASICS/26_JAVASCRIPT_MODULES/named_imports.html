@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JAVASCRIPT MODULE</title>
+    <script type="module">
+      // FIRST TYPE IMPORT
+      // individual import with same name as function
+      // import { calc } from "./calc.js";
+      // import { sum } from "./maths_operation.js";
+      // import { cube } from "./maths_operation.js";
+      // calc();
+      // sum(5, 56);
+      // cube(5);
+      // SECOND TYPE IMPORT
+      // import in single line with comma seperated named imports with same file.
+
+      import { sum, cube } from "./maths_operation.js";
+      import { calc } from "./calc.js";
+      calc();
+      sum(5, 56);
+      cube(5);
+      // THIRD TYPE IMPORT OF CHANGED NAME EXPORTS
+      // we have to use changed name to use the
+      // Ex: sum as total - so use total now in place of sum
+      // Ex: cube as cubeOfNumbers - so use cubeOfNumbers now in place of cube
+      // import { total, cubeOfNumbers } from "./maths_operation.js";
+
+      // ** we can also rename the imported values of module.
+
+      // import {
+      //   sum as total,
+      //   cube as cubeOfNumbers,
+      // } from "./maths_operation.js";
+      // total(5, 10);
+      // cubeOfNumbers(5, 10);
+
+      // FOURTH TYPE OF IMPORT
+      // obj will become object and all export name will become
+      // method of object
+      // NOTE: when file has lots of exports we must use * import to import all the named exports into an object.
+
+      // import * as obj from "./maths_operation.js";
+      // obj.cube(5);
+      // obj.sum(5, 9);
+
+      // IMPORTANT NOTE: In modern build tools like webpack, if some imported modules are not used then those modules gets removed internally by webpack or other build tools i.e. Tree Shaking happening.
+    </script>
+  </head>
+  <body>
+    <h1>JAVASCRIPT MODULE</h1>
+  </body>
+</html>

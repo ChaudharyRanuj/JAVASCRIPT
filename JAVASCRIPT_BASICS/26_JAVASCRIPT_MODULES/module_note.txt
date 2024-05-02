@@ -1,0 +1,46 @@
+Q1. What is module?
+
+Javascript ES6 provides a provision of importing and exporting of module directly
+which can be reused when required, unlike older version.
+
+Note: Module means dividing you code into various logical pieces & importing them when required.
+
+Q2. Can you Import any module inside the script tag?
+
+type attribute value module makes script tag import module
+           v
+           v
+<script type="module">
+      import { calc } from "./calc.js";
+      calc();
+</script>
+
+
+Q3. How will you run the import and export statement in local machine?
+
+When using import and export statement in local machine we need a server
+for running the import and export statements.
+
+Note: 
+1). For Frameworks like REACT, ANGULAR we have webpack or related build tool which run the development server, so import and export statements are execute directly.
+2) With simple HTML and Javascript we need to have local server or we can configure
+the chrome web server.
+
+
+NAMED EXPORTS/IMPORTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEFAULT EXPORTS/IMPORTS
