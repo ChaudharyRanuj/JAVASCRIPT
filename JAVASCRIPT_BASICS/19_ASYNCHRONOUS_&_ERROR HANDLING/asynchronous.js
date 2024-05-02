@@ -24,7 +24,7 @@ Examples:
 /*
 Asynchronous Javascript and XML: Allows us to communicate with remote web servers in an asynchronous way. with AJAX calls, we can request data from the web servers dynamically.
 
-              request (GET/POST/ETC.)
+              request (GET/POST/PUT/PATCH /DELETE ETC.)
 Client ----------------------> Web Server (Usally a web API) 
 Client <---------------------- Web Server 
               response 
@@ -156,6 +156,13 @@ const btn = document.querySelector(".btn");
 // new Promise(Executer function)
 // function executer(resolve, reject) { resolve(); reject(); }
 /* 
+
+How To Create Your Own Implementation Of JavaScript Promises  :-
+
+https://www.youtube.com/watch?v=1l4wHWQCCIc&t=320s
+
+
+
 console.log("*************** BUILDING PROMISES ***************");
 const passFailed = new Promise((resolve, reject) => {
   // ENCAPSULATION OF ASYNCHRONOUS BEHAVIOUR TO PROMISE
