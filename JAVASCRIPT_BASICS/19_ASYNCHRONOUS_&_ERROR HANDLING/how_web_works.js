@@ -11,12 +11,13 @@ DNS LOOKUP return this (https://104.27.142.889:443)
 *****************************************************
    V 2
    V
-TCP/IP SOCKET CONNECTION (TRANSMISSION CONTROL PROTOCOL/INTERNET PROTOCOL) INTERNET PROTOCOL
+TCP/IP SOCKET CONNECTION ESTABLISHED(TRANSMISSION CONTROL PROTOCOL/INTERNET PROTOCOL) INTERNET PROTOCOL
 **************************************************************************************************
    V 3
    V
-HTTP REQUEST(HYPER TEXT TRANFER PROTOCOL)
+HTTP REQUEST CAN BE MADE (HYPER TEXT TRANFER PROTOCOL)
 *****************************************
+
 HTTP METHOD    REQUEST TARGET   HTTP Version  
    V 4                V           V
    V
@@ -29,6 +30,7 @@ Accept-Language: en-US       |
 <BODY>                       |>>>>>>>> Request body (only when sending data to server, e.g. POST)
   V 5 
   V
+
 HTTP RESPONSE
 **************
 
