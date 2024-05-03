@@ -116,7 +116,6 @@ Output: [1,2]
 //       current = current.next;
 //     }
 //   }
-
 //   return head;
 // };
 
@@ -229,7 +228,6 @@ Output: [1,2]
 //   return head;
 // };
 
-
 // OPTIMISED SOLUTION
 // HINT MAKE SLOW FAST POINTER AT GAP OF n (position of node from back)
 // var removeNthFromEnd = function(head, n) {
@@ -250,3 +248,102 @@ Output: [1,2]
 
 // return head;
 // };
+
+//Q8. Swapping Nodes in a Linked List
+
+// Medium
+
+// You are given the head of a linked list, and an integer k.
+// Return the head of the linked list after swapping the values of the kth node from the beginning and the kth node from the end (the list is 1-indexed).
+
+// FIRST BRUTE FORCE APPROACH
+// var swapNodes = function (head, k) {
+//   if (head.next === null || head === null) return head;
+//   let startNode = head;
+//   let index = 1;
+//   while (index < k) {
+//     startNode = startNode.next;
+//     index++;
+//   }
+
+//   let slow = head;
+//   let fast = head;
+//   while (k--) {
+//     fast = fast.next;
+//   }
+
+//   while (fast !== null) {
+//     slow = slow.next;
+//     fast = fast.next;
+//   }
+//   let startNodeValue = startNode.val;
+//   startNode.val = slow.val;
+//   slow.val = startNodeValue;
+//   return head;
+// };
+
+// OPTIMISED APPROACH
+// var swapNodes = function(head, k) {
+//   if (head.next === null || head === null) return head;
+// let slow = head;
+// let fast = head;
+// let index = 1
+// while (index < k) {
+//   fast = fast.next;
+//   index++
+// }
+// let startNode = fast;
+// while (fast.next !== null) {
+//   slow = slow.next;
+//   fast = fast.next;
+// }
+// let lastNodeValue = slow.val
+// let startNodeValue = startNode.val
+
+// slow.val = startNodeValue
+// startNode.val = lastNodeValue
+// return head;
+// };
+
+// Q9. Reverse Linked List iteratively and recursively
+// Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+// ITERATIVELY
+// var reverseList = function(head) {
+//   if(head === null || head.next === null) {
+//       return head;
+//   }
+
+//   let node = head;
+//   let next = node;
+//   let prev = null
+
+//   while(next !== null) {
+//   next = node.next
+//   node.next = prev;
+//   prev = node;
+//   node = next;
+//   }
+//   return prev;
+//   };
+
+// RECURSIVELY
+
+// function reverseLinkedList(head) {
+//   let node = head;
+//   let next = node;
+//   let prev = null;
+
+//   function reverse(node) {
+//     if (next === null) {
+//       return prev;
+//     }
+//     next = node.next;
+//     node.next = prev;
+//     prev = node;
+//     node = next;
+//     reverse(node);
+//   }
+//   reverse(node);
+//   return prev;
+// }
