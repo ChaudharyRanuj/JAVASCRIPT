@@ -347,3 +347,41 @@ Output: [1,2]
 //   reverse(node);
 //   return prev;
 // }
+
+// Q10 Linked List Cycle
+// Solved
+// Easy
+
+// Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+// There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+// Return true if there is a cycle in the linked list. Otherwise, return false.
+
+// SLOW FAST POINTER APPROACH
+var detectCycle = function (head) {
+  if (head === null) return null;
+  let slow = head;
+  let fast = head;
+  let isCycleExist = false;
+  while (fast.next !== null && fast.next.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) {
+      isCycleExist = true;
+      break;
+    }
+  }
+
+  if (!isCycleExist) {
+    return null;
+  }
+
+  let start = head;
+
+  while (start !== slow) {
+    start = start.next;
+    slow = slow.next;
+  }
+  return slow;
+};
