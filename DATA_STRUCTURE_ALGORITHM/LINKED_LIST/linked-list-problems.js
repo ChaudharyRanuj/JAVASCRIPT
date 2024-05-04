@@ -359,29 +359,29 @@ Output: [1,2]
 // Return true if there is a cycle in the linked list. Otherwise, return false.
 
 // SLOW FAST POINTER APPROACH
-var detectCycle = function (head) {
-  if (head === null) return null;
-  let slow = head;
-  let fast = head;
-  let isCycleExist = false;
-  while (fast.next !== null && fast.next.next !== null) {
-    slow = slow.next;
-    fast = fast.next.next;
-    if (slow === fast) {
-      isCycleExist = true;
-      break;
-    }
-  }
+// var detectCycle = function (head) {
+//   if (head === null) return null;
+//   let slow = head;
+//   let fast = head;
+//   let isCycleExist = false;
+//   while (fast.next !== null && fast.next.next !== null) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//     if (slow === fast) {
+//       isCycleExist = true;
+//       break;
+//     }
+//   }
 
-  if (!isCycleExist) {
-    return null;
-  }
+//   if (!isCycleExist) {
+//     return null;
+//   }
 
-  let start = head;
+//   let start = head;
 
-  while (start !== slow) {
-    start = start.next;
-    slow = slow.next;
-  }
-  return slow;
-};
+//   while (start !== slow) {
+//     start = start.next;
+//     slow = slow.next;
+//   }
+//   return slow;
+// };
