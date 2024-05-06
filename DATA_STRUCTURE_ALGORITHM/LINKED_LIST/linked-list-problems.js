@@ -135,13 +135,9 @@ Output: [1,2]
 //       if (set.has(temp.data)) {
 //         current.next = temp.next;
 //       } else {
+//         set.add(temp.data);
 //         current = temp;
 //       }
-
-//       if (!set.has(temp.data)) {
-//         set.add(temp.data);
-//       }
-
 //       temp = temp.next;
 //     }
 
@@ -287,10 +283,8 @@ Output: [1,2]
 //   if (head.next === null || head === null) return head;
 // let slow = head;
 // let fast = head;
-// let index = 1
-// while (index < k) {
+// while (--k) {
 //   fast = fast.next;
-//   index++
 // }
 // let startNode = fast;
 // while (fast.next !== null) {
@@ -299,7 +293,6 @@ Output: [1,2]
 // }
 // let lastNodeValue = slow.val
 // let startNodeValue = startNode.val
-
 // slow.val = startNodeValue
 // startNode.val = lastNodeValue
 // return head;
@@ -385,3 +378,161 @@ Output: [1,2]
 //   }
 //   return slow;
 // };
+
+// 11 Rotate linked list
+// Given the head of a linked list, rotate the list to the right by k places.
+/*
+Input: head = [1,2,3,4,5], k = 2
+Output: [4,5,1,2,3]
+
+Input: head = [0,1,2], k = 4
+Output: [2,0,1]
+
+*/
+
+// FIRST APPRAOACH
+// function rotateLinkedList(k, head, length) {
+//   let slow = head;
+//   let fast = head;
+//   // move fast counter ahead by k
+//   while(k--) {
+//     fast = fast.next
+//   }
+
+//   // slow will reach one before kth node
+//   while(fast.next && fast){
+//     slow = slow.next;
+//     fast = fast.next;
+//   }
+// // detach the listafter
+//   let node = slow.next
+//   slow.next = null;
+//   fast.next = head;
+//   return node;
+
+// }
+
+// var rotateRight = function(head, k) {
+//     if(head === null || head.next === null) return head;
+// let current = head;
+// let listLength = 0;
+
+// while(current) {
+//     current = current.next
+//     listLength++
+// }
+
+//  if(k > listLength){
+//     k = k % listLength
+//  }
+// // if k = 0 or k = length of linked list means we will orignal linked list so
+// // retun head;
+// if(k === listLength || k === 0) {
+//     return head;
+// } else if(k < listLength){
+// // if k modulus lenght of linked list than rotate the string.
+// let result = rotateLinkedList(k, head, listLength)
+// return result;
+// }
+
+// };
+
+// SECOND APPROACH
+// DO WITH You Tube HELLO WORLD Prince Sir Approach
+
+
+// Q12 2. Add Two Numbers
+
+// You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+// You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+// BRUTE FORCE
+// var addTwoNumbers = function (l1, l2) {
+
+//   let first = l1
+//   let second = l2
+//   let result = new ListNode(-1)
+//   let dummy = result
+//   let sum = 0
+//   let carry = 0
+//   let value = 0
+
+//   while (first && second) {
+//       sum = sum > 9 ? first.val + second.val + carry : first.val + second.val;
+//       carry = sum > 9 ? Math.trunc(sum / 10) : 0;
+//       value = sum > 9 ? sum % 10 : sum;
+//       result.next = new ListNode(value)
+//       result = result.next
+//       first = first.next
+//       second = second.next
+//        if (first === null && second === null &&  sum > 9 ) {
+//           result.next = new ListNode(carry)
+//           result = result.next
+//       }
+//   }
+
+//   while (first) {
+//       sum = sum > 9 ? first.val + carry : first.val;
+//       carry = sum > 9 ? Math.trunc(sum / 10) : 0;
+//       value = sum > 9 ? sum % 10 : sum;
+//       result.next = new ListNode(value)
+//       result = result.next
+//       first = first.next
+//       if (first === null  &&  sum > 9 ) {
+//           result.next = new ListNode(carry)
+//           result = result.next
+//       }
+//   }
+//   while (second) {
+//       sum = sum > 9 ? second.val + carry : second.val;
+//       carry = sum > 9 ? Math.trunc(sum / 10) : 0;
+//       value = sum > 9 ? sum % 10 : sum;
+//       result.next = new ListNode(value)
+//       result = result.next
+//       second = second.next
+//       if (second === null &&  sum > 9 ) {
+//           result.next = new ListNode(carry)
+//           result = result.next
+//       }
+//   }
+//   return dummy.next
+// };
+
+// SECOND APPROACH
+// Retry and do in first while loop
+
+
+// Q13 Swap Nodes in Pairs
+// Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+
+// BRUTE FORCE
+// BY CHANGING THE VALUES
+// var swapPairs = function (head) {
+//   if (head === null || head.next === null) return head;
+//   let prev = head
+//   let next = prev.next
+
+//   if (next === null) {
+//       let prevVal = prev.val
+//       prev.val = next.val
+//       next.val = prevVal
+//       return head;
+//   }
+//   let nextIndex = 2;
+//   while (next) {
+//       if (nextIndex % 2 == 0) {
+//           let prevVal = prev.val
+//           prev.val = next.val
+//           next.val = prevVal
+//       }
+
+//       prev = prev.next
+//       next = next.next
+//       nextIndex++
+//   }
+//   return head;
+// };
+
+
+// BY CHANGING THE NODEPOINTER
