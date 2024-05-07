@@ -536,3 +536,72 @@ Output: [2,0,1]
 
 
 // BY CHANGING THE NODEPOINTER
+
+// var swapPairs = function (head) {
+//   let dummy = new ListNode(0)
+//   dummy.next = head;
+//   let pointer = dummy
+//   let pre
+//   let next
+//   while (pointer.next !== null && pointer.next.next !== null) {
+//       //initilise prev and next node
+//       prev = pointer.next
+//       next = pointer.next.next
+
+//       // swap prev and next
+//       prev.next = next.next
+//       next.next = prev
+
+//       // change ponter.next to next and move pointer to prev
+//       pointer.next = next;
+//       pointer = prev
+//   }
+//   return dummy.next;
+// };
+
+// Q14 Palindrome Linked List
+// FIRST APPROACH
+// var isPalindrome = function(head) {
+//   let stringLeftToRight = ''
+//   let stringFromRightToLeft = ''
+
+//   let current = head;
+//   while(current){
+//       stringLeftToRight = stringLeftToRight + current.val
+//       stringFromRightToLeft = current.val + stringFromRightToLeft 
+
+//       current = current.next
+//   }
+
+//   if(stringLeftToRight === stringFromRightToLeft){
+//       return true;
+//   } else {
+//       return false;
+//   }
+
+// };
+
+
+// SECOND APPROACH
+// var isPalindrome = function (head) {
+//   let current = new ListNode(head.val)
+//   let temp = head.next;
+
+//   while (temp) {
+//       let newNode = new ListNode(temp.val)
+//       newNode.next = current
+//       current = newNode;
+//       temp = temp.next
+//   }
+
+//   let newHead = head;
+//   while (current) {
+//       if (current.val !== newHead.val) {
+//       return false;
+//       }
+//       current = current.next
+//       newHead = newHead.next
+//   }
+
+//   return true;
+// };
