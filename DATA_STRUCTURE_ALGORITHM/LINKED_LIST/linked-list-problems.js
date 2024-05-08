@@ -151,37 +151,25 @@ Output: [1,2]
 // Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
 // Return the head of the merged linked list.
 
-// var mergeTwoLists = function(list1, list2) {
-//   let result  = new ListNode(-1)
+// var mergeTwoLists = function (list1, list2) {
+//   let result = new ListNode(-1)
 //   let dummy = result
 
-//   while(list1 && list2) {
-//       if(list1.val <= list2.val) {
-//           result.next = new ListNode(list1.val)
-//           result = result.next
+//   while (list1 && list2) {
+//       if (list1.val <= list2.val) {
+//           result.next = list1
 //           list1 = list1.next
-//       }
-// if(list1 === null) break;
-//       if(list2.val <= list1.val) {
-//             result.next = new ListNode(list2.val)
-//           result = result.next
+//       } else {
+//           result.next = list2
 //           list2 = list2.next
 //       }
-
+//       result = result.next
 //   }
 
-// while(list1) {
-//         result.next = new ListNode(list1.val)
-//           result = result.next
-//           list1 = list1.next
-// }
-// while(list2) {
-//         result.next = new ListNode(list2.val)
-//           result = result.next
-//           list2 = list2.next
-// }
+//  if(list1 != null) result.next = list1
+//  if(list2 != null) result.next = list2
 
-// return dummy.next
+//   return dummy.next
 // };
 
 // Q7 Remove Nth Node From End of List
@@ -440,7 +428,6 @@ Output: [2,0,1]
 // SECOND APPROACH
 // DO WITH You Tube HELLO WORLD Prince Sir Approach
 
-
 // Q12 2. Add Two Numbers
 
 // You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
@@ -502,7 +489,6 @@ Output: [2,0,1]
 // SECOND APPROACH
 // Retry and do in first while loop
 
-
 // Q13 Swap Nodes in Pairs
 // Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
 
@@ -533,7 +519,6 @@ Output: [2,0,1]
 //   }
 //   return head;
 // };
-
 
 // BY CHANGING THE NODEPOINTER
 
@@ -568,7 +553,7 @@ Output: [2,0,1]
 //   let current = head;
 //   while(current){
 //       stringLeftToRight = stringLeftToRight + current.val
-//       stringFromRightToLeft = current.val + stringFromRightToLeft 
+//       stringFromRightToLeft = current.val + stringFromRightToLeft
 
 //       current = current.next
 //   }
@@ -580,7 +565,6 @@ Output: [2,0,1]
 //   }
 
 // };
-
 
 // SECOND APPROACH
 // var isPalindrome = function (head) {
