@@ -636,3 +636,63 @@ Output: [2,0,1]
 
 //   return mergeSortedList(leftHalf, rightHalf);
 // };
+
+// // Q16 Intersection of Two Linked Lists
+
+// BRUTE FORCE
+// var getIntersectionNode = function(headA, headB) {
+//   let set = new Set()
+//   let firstList = headA;
+//   while(firstList){
+//       set.add(firstList)
+//       firstList =  firstList.next
+//   }
+
+// let secondList = headB
+// while(secondList) {
+//   if(set.has(secondList)){
+//       return secondList
+//   }
+//   secondList = secondList.next
+// }
+
+// return null;
+
+// };
+
+// // OPTIMISED SOLUTION
+// var getIntersectionNode = function (headA, headB) {
+//   let a = 0;
+//   let b = 0;
+//   let firstList = headA;
+//   while (firstList) {
+//     firstList = firstList.next;
+//     a++;
+//   }
+//   let secondList = headB;
+//   while (secondList) {
+//     secondList = secondList.next;
+//     b++;
+//   }
+//   let diffInListLength = Math.abs(a - b);
+//   if (a < b) {
+//     while (diffInListLength--) {
+//       headB = headB.next;
+//     }
+//   } else {
+//     while (diffInListLength--) {
+//       headA = headA.next;
+//     }
+//   }
+
+//   while (headA && headB) {
+//     if (headA === headB) {
+//       return headA;
+//     }
+
+//     headA = headA.next;
+//     headB = headB.next;
+//   }
+
+//   return null;
+// };
