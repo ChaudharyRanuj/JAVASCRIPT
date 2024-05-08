@@ -152,8 +152,8 @@ Output: [1,2]
 // Return the head of the merged linked list.
 
 // var mergeTwoLists = function (list1, list2) {
-//   let result = new ListNode(-1)
-//   let dummy = result
+//   let dummy = new ListNode(-1)
+//   let result = dummy
 
 //   while (list1 && list2) {
 //       if (list1.val <= list2.val) {
@@ -588,4 +588,51 @@ Output: [2,0,1]
 //   }
 
 //   return true;
+// };
+
+//
+
+// // Q15 Sort linked list using Merge Sort
+// function midNode(node) {
+//   let slow = node;
+//   let fast = node;
+//   while (fast.next != null && fast.next.next != null) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+//   return slow;
+// }
+
+// function mergeSortedList(leftList, rightList) {
+//   if (leftList == null || rightList == null) {
+//     return leftList == null ? rightList : leftList;
+//   }
+//   let dummy = new ListNode(-1);
+//   let result = dummy;
+//   while (leftList && rightList) {
+//     if (leftList.val <= rightList.val) {
+//       result.next = leftList;
+//       leftList = leftList.next;
+//     } else {
+//       result.next = rightList;
+//       rightList = rightList.next;
+//     }
+//     result = result.next;
+//   }
+//   if (leftList == null || rightList == null) {
+//     result.next = leftList == null ? rightList : leftList;
+//   }
+//   return dummy.next;
+// }
+
+// var sortList = function (head) {
+//   if (head == null || head.next == null) return head;
+//   let mid = midNode(head);
+//   let newHead = mid.next;
+//   mid.next = null;
+
+//   let leftHalf = sortList(head);
+//   let rightHalf = sortList(newHead);
+
+//   return mergeSortedList(leftHalf, rightHalf);
 // };
