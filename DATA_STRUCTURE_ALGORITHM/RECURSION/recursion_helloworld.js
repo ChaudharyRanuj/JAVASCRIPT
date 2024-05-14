@@ -1,132 +1,72 @@
-// // let nums = [2,2,2,3,3,3, 1,1,1].sort((a,b) => a - b)
-// // let map = new Map();
-// // for (let ele of nums) {
-// //   if (!map.has(ele)) {
-// //     map.set(ele, 1);
-// //   } else {
-// //     map.set(ele, map.get(ele) + 1);
-// //   }
-// // }
-// // console.log(map);
+// Q1. FACTORIAL
+// let n = 5
 
-// // let freqMap = new Map();
-
-// // for (let pair of map) {
-// //   const [key, value] = pair;
-// //   if (freqMap.has(value)) {
-// //     let newAr = [];
-// //     for (let i = 0; i < value; i++) {
-// //       newAr.push(key);
-// //     }
-// //     freqMap.set(value, [...newAr, ...freqMap.get(value)]);
-// //   } else {
-// //     let arr = [];
-// //     for (let i = 0; i < value; i++) {
-// //       arr.push(key);
-// //     }
-// //     freqMap.set(value, [...arr]);
-// //   }
-// // }
-
-// // let arr = [];
-// // for (let [key, value] of freqMap) {
-// //   arr.push([key, value]);
-// // }
-
-// // arr.sort((a,b) => a[0] - b[0])
-
-// // const ans = arr.reduce((prev,curr) => [...prev,...curr[1]], [])
-// // console.log(ans);
-
-// let nums = [2, 2, 2, 3, 1, 1, 1].sort((a, b) => a - b);
-// let map = new Map();
-// for (let ele of nums) {
-//   if (!map.has(ele)) {
-//     map.set(ele, 1);
-//   } else {
-//     map.set(ele, map.get(ele) + 1);
+// function factorial(n) {
+//   // base condition
+// for factorial lowest value may be 0 for which factorial is 1
+//   if(n== 0 && n == 1) {
+//     return n;
 //   }
+//   return n * factorial(n - 1)
+// }
+// let factorialValue = factorial(n)
+// console.log(factorialValue);
+
+
+// Q2 Sum of Array
+// const arr = [2,3,4,5]
+// let n = arr.length - 1;
+// function sumOfArray(arr, n) {
+//   // base condition
+//   if(n === 0) {
+//     return arr[n]
+//   }
+//   return arr[n] + sumOfArray(arr, n - 1)
 // }
 
-// const arr = Array.from(map).sort((a, b) => a[1] - b[1]);
+// let sum = sumOfArray(arr, n)
+// console.log(sum);
 
-// const freqMap = new Map();
+// Q3 Power of Numbers Recursively
 
-// for (let pair of arr) {
-//   const [key, value] = pair;
-//   if (freqMap.has(value)) {
-//     let newAr = [];
-//     for (let i = 0; i < value; i++) {
-//       newAr.push(key);
-//     }
-//     freqMap.set(value, [...newAr, ...freqMap.get(value)]);
-//   } else {
-//     let arr = [];
-//     for (let i = 0; i < value; i++) {
-//       arr.push(key);
-//     }
-//     freqMap.set(value, [...arr]);
-//   }
-// }
 
-// const output = [...freqMap].reduce((prev, curr) => [...prev, ...curr[1]], []);
-// // return output;
-// let nums1 = [1, 2, 3, 0, 0, 0],
-//   m = 3,
-//   nums2 = [2, 5, 6],
-//   n = 3;
+// Q4 Print 1 to N zwithout loop complete recursion.
+// let N = 5;
+// function printNos(n) {
+  //   if(n === 0) return 
+  //   printNos(n - 1)
+  // console.log(n)
+  // }
+  
+  // printNos(N)
 
-// let output = [];
-// let i = 0;
-// let j = 0;
-// while (i < nums1.length && j < nums2.length) {
-//   if (nums1[i] <= nums2[j]) {
-//     if (nums1[i] !== 0) {
-//       output.push(nums1[i]);
-//     }
-//     i++;
-//   }
-//   if (nums2[j] <= nums1[i]) {
-//     if (nums2[j] !== 0) {
-//       output.push(nums2[j]);
-//     }
-//     j++;
-//   }
-// }
+  // Q5 Reverse a string recursive solution
+  
+  // let str = 'ReverseTheString'
+  
+  // function reverseString(str) {
+    //   if(str.length === 0) return ''
+    //   return reverseString(str.slice(1)) + str[0]
+    // }
+    
+    // let reversedString = reverseString(str)
+    
+    // console.log(reversedString);
+    
+    // Q6 Larget Elemetn in Array
 
-// while (i < nums1.length) {
-//   if (nums1[i] !== 0) {
-//     output.push(nums1[i]);
-//   }
-//   i++;
-// }
+    // let arr = [7,12,9,10,71,80,20]
+    // let n = arr.length  - 1
+    // function maxValue(arr, n) {
+    //   if(n == 0) {
+    //     return arr[n]
+    //   }
+    //   return Math.max(arr[n], maxValue(arr, n - 1))
+    // }
 
-// while (j < nums2.length) {
-//   if (nums2[j] !== 0) {
-//     output.push(nums2[j]);
-//   }
-//   j++;
-// }
-// console.log(output);
-// let n = 1;
+    // let max = maxValue(arr, n)
+    // console.log(max)
 
-// function findnthFibonacci(n) {
-//   let arr = [0, 1];
-//   let sum = 0;
-//   for (let i = 0; i < n; i++) {
-//     sum = arr[arr.length - 1] + arr[arr.length - 2];
-//     arr.push(sum);
-//   }
-//   return arr[n];
-// }
-// console.log(findnthFibonacci(n));
+    // Q7 Fibonacci Number
+    //  0,1,1,2,3,5,8,13,21,34
 
-let name = "111112222233333";
-let len = name.length - 1;
-function reverse(str, n) {
-  if (n < 0) {
-    return "";
-  }
-  return str[n] + reverse(str, n - 1);
-}
-console.log(reverse(name, len));
