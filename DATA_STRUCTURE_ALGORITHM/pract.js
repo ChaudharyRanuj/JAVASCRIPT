@@ -1,13 +1,12 @@
-let arr = [1, 2, 3, 4, 5];
-let n = 4;
+let arr = [1, 1, 1, 1];
+let k = 2;
+let n = arr.length;
+let count = 0;
+
 for (let i = 0; i < n; i++) {
-  let last = arr.length - 1;
-  let lastEle = arr[last];
-  for (let i = last; i > 0; i--) {
-    arr[i] = arr[i - 1];
-  }
-
-  arr[0] = lastEle;
+ let diff = k - arr[i]
+ let map = new Map()
+  
+ 
 }
-
-console.log(arr);
+console.log(count);

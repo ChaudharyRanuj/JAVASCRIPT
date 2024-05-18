@@ -234,18 +234,105 @@ arr[] = {1, -1, 3, 2, -7, -5, 11, 6 }
 
 // BRUTE FORCE
 // Note: Remove TLE find efficient solution
+// take last element and move to the swap and move the first position
+// do swap no of rotation time;
+// let arr = [1, 2, 3, 4, 5];
+// let n = 4;
 
-let arr = [1, 2, 3, 4, 5];
-let n = 4;
-let last = arr.length - 1;
-let lastEle = arr[last];
+// for (let i = 0; i < n; i++) {
+//   let last = arr.length - 1;
+//   let lastEle = arr[last];
+//   for (let i = last; i > 0; i--) {
+//     arr[i] = arr[i - 1];
+//   }
+//   arr[0] = lastEle;
+// }
 
-for (let i = 0; i < n; i++) {
-  let last = arr.length - 1;
-  let lastEle = arr[last];
-  for (let i = last; i > 0; i--) {
-    arr[i] = arr[i - 1];
-  }
+// TIME COMPLEXITY O(n square)
+// SPACE COMPLEXITY O(1)
 
-  arr[0] = lastEle;
-}
+// optimal solution
+
+// let arr = [1, 2, 3, 4, 5];
+// let n = 4;
+// var rotate = function (arr, n) {
+//   for (let i = 0; i < n; i++) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     while (start != end) {
+//       let temp;
+//       temp = arr[start];
+//       arr[start] = arr[end];
+//       arr[end] = temp;
+//       start++;
+//     }
+//   }
+// };
+
+// // optimised solution
+
+// var rotate = function (arr, n) {
+//   n = n > arr.length ? Math.floor(n % arr.length) : n;
+
+//   let k = arr.length - n - 1;
+//   let start = 0;
+
+//   while (start < k) {
+//     [arr[start], arr[k]] = [arr[k], arr[start]];
+//     start++;
+//     k--;
+//   }
+
+//   // reverse array from arr.length - k
+
+//   let j = arr.length - n;
+//   let end = arr.length - 1;
+//   while (j < end) {
+//     [arr[end], arr[j]] = [arr[j], arr[end]];
+//     j++;
+//     end--;
+//   }
+
+//   // reverse the whole array to get the result
+//   for (let i = 0, j = arr.length - 1; i < j; i++, j--) {
+//     [arr[i], arr[j]] = [arr[j], arr[i]];
+//   }
+// };
+
+// // TIME COMPLEXITY O(n)
+// // SPACE COMPLEXITY O(1)
+
+// Q11. Cyclic Rotate array
+
+// let sumOfNaturatlNo = ( n * ( n + 1)) / 2
+
+// let total = 0
+// for(let i = 0 ; i < arr.length; i++) {
+//     total += arr[i]
+// }
+
+// return sumOfNaturatlNo - total;
+
+// Q12. Count pairs with given sum
+
+// BRUTE FORCE
+// Note: Remove TLE
+
+// let arr = [1, 1, 1, 1]
+// let k = 2
+// let n = arr.length;
+// let count = 0;
+// for(let i = 0 ; i < n ; i++){
+//     for(let j = i + 1;j < n; j++) {
+//     if(arr[i] + arr[j] == k ) {
+//         count++
+//     }
+//     }
+
+// }
+// TIME COMPLEXITY : O(n square)
+// space : O(1)
+
+// OPTIMISED
+// TIME COMPLEXITY : O(n)
+// space : O(n)
