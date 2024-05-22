@@ -86,4 +86,105 @@ return str.join(" ");
 //     }
 // }
 
-Q5. 
+// Q5. Integer to Roman Number
+
+
+// Q6. Closest Strings
+
+// let words = ["the", "quick", "brown", "fox", 
+// "quick"];
+// let n = words.length;
+
+// let word1 =  "the";
+// let word2 = "fox";
+
+// let diff1 = -1
+// let diff2 = -1
+// let ans = Number.MAX_VALUE
+// let i = 0 ;
+
+
+// while(i < n) {
+//  if(words[i] === word1) {
+//      diff1 = i;
+//  }
+ 
+//  if(words[i] === word2) {
+//      diff2 = i;
+//  }
+ 
+//  if(diff1 != -1 && diff2 != -1) {
+//  ans = Math.min(ans, Math.abs(diff1 - diff2))   
+//  }
+    
+// i++    
+// }
+// return ans;
+
+
+// Q7. Encript the string
+
+// function convertToHex(num) {
+ 
+//     let temp = "";
+//     while (num != 0) {
+//         let rem = num % 16;
+//         let c = 0;
+//         if (rem < 10) {
+//             c = rem + 48;
+//         }
+//         else {
+//             c = rem + 87;
+//         }
+//         temp += String.fromCharCode(c);
+//         num = Math.floor(num / 16);
+//     }
+ 
+//     return temp;
+// }
+ 
+// // Function to encrypt the string
+// function encryptString(S, N) {
+ 
+//     let ans = "";
+ 
+//     // Iterate the characters
+//     // of the string
+//     for (let i = 0; i < N; i++) {
+ 
+//         let ch = S[i];
+//         let count = 0;
+//         let hex;
+ 
+//         // Iterate until S[i] is equal to ch
+//         while (i < N && S[i] == ch) {
+ 
+//             // Update count and i
+//             count++;
+//             i++;
+//         }
+ 
+//         // Decrement i by 1
+//         i--;
+ 
+//         // Convert count to hexadecimal
+//         // representation
+//         hex = convertToHex(count);
+ 
+//         // Append the character
+//         ans += ch;
+ 
+//         // Append the characters frequency
+//         // in hexadecimal representation
+//         ans += hex;
+//     }
+ 
+//     // Reverse the obtained answer
+//     ans = ans.split('').reverse().join("");
+ 
+//     // Return required answer
+//     return ans;
+// }
+ 
+
+
