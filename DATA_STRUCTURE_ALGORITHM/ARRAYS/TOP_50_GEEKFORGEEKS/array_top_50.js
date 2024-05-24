@@ -336,3 +336,173 @@ arr[] = {1, -1, 3, 2, -7, -5, 11, 6 }
 // OPTIMISED
 // TIME COMPLEXITY : O(n)
 // space : O(n)
+
+// class Solution {
+//   getPairsCount(arr, n, k) {
+//     //code here
+//     let count = 0;
+//     let i = 0;
+//     let map = new Map();
+//     while (i < n) {
+//       let diff = k - arr[i];
+//       if (map.has(diff)) {
+//         count += map.get(diff);
+//       }
+//       if (!map.has(arr[i])) {
+//         map.set(arr[i], 1);
+//       } else {
+//         map.set(arr[i], map.get(arr[i]) + 1);
+//       }
+
+//       i++;
+//     }
+//     return count;
+//   }
+// }
+
+// Q13. Find duplicates in an array
+// BRUTE FORCE
+
+// class Solution {
+//   duplicates(arr, n) {
+//     // your code here
+//     let set = new Set();
+//     let i = 0;
+//     let result = [];
+//     while (i < n) {
+//       if (set.has(arr[i]) && !result.includes(arr[i])) {
+//         result.push(arr[i]);
+//       }
+
+//       if (!set.has(arr[i])) {
+//         set.add(arr[i]);
+//       }
+//       i++;
+//     }
+
+//     if (result.length > 0) return result.sort((a, b) => a - b);
+
+//     return [-1];
+//   }
+// }
+
+// OPTIMISED SOLUTION
+// class Solution {
+
+//     duplicates(arr, n) {
+//         // your code here
+// arr.sort((a,b)=> a - b)
+// let set = new Set()
+// let duplicates = new Set()
+// let i = 0;
+
+// while(i < n){
+//     if(set.has(arr[i]) && !duplicates.has(arr[i])){
+//     duplicates.add(arr[i])
+//     }
+
+//     if(!set.has(arr[i])){
+//         set.add(arr[i])
+//     }
+//     i++
+// }
+
+// if(duplicates.size > 0) return Array.from(duplicates);
+
+// return [-1]
+//     }
+// }
+
+// time complexity: O(n)
+// space complexity: O(n + m)
+
+// Q14. Find duplicates in an array
+// BRUTE FORCE
+// duplicates(arr, n) {
+//     // your code here
+// arr.sort((a,b)=> a - b)
+// let set = new Set()
+// let duplicates = new Set()
+// let i = 0;
+
+// while(i < n){
+// if(set.has(arr[i]) && !duplicates.has(arr[i])){
+// duplicates.add(arr[i])
+// }
+
+// if(!set.has(arr[i])){
+//     set.add(arr[i])
+// }
+// i++
+// }
+
+// if(duplicates.size > 0) return Array.from(duplicates);
+
+// return [-1]
+// }
+
+// Q15 Sort an Array using the Quicksort algorithm
+
+// Q16 Find common elements in three sorted arrays
+
+// BRUTE FORCE
+// class Solution{
+//     commonElements(arr1, arr2, arr3, n1, n2,n3){
+//         //code here
+//         // BRUTE FORCE
+//         let set1 = new Set()
+//         let set2 = new Set()
+
+//        let i = 0
+//        while(i < n1) {
+//            if( !set1.has(arr1[i]) ){
+//                set1.add(arr1[i])
+//            }
+//            i++
+//        }
+
+//         let j = 0
+//        while(j < n2) {
+//            if( !set2.has(arr2[j]) ){
+//                set2.add(arr2[j])
+//            }
+//            j++
+//        }
+
+//        let k = 0;
+//        let result = []
+//        while(k < n3){
+//            if( set1.has(arr3[k]) && set2.has(arr3[k]) ){
+//                if(!result.includes(arr3[k])) {
+//                result.push( arr3[k] )
+//                }
+//            }
+//            k++
+//        }
+
+//        return result
+//     }
+// }
+
+// SECOND APPROACH
+
+// class Solution{
+//     commonElements(arr1, arr2, arr3, n1, n2,n3){
+//         //code here
+//         // BRUTE FORCE
+//         let set1 = new Set(arr1)
+//         let set2 = new Set(arr2)
+//         let set3 = new Set(arr3)
+
+//       let result = []
+//       for(let num of set3) {
+//          if(set1.has(num) && set2.has(num)){
+//              result.push(num)
+//          }
+//      }
+
+//        return result
+//     }
+// }
+
+// MOST OPTIMISED APPROACH
