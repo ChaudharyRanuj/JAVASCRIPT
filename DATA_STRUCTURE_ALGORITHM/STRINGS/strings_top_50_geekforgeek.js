@@ -216,43 +216,44 @@
 //     }
 // }
 
-let str1 = 'aba'
-let str2 = 'xyz'
+// let str1 = 'aba'
+// let str2 = 'xyz'
+
+// if(str1.length != str2.length) return false;
+// // code here
+
+// let counter1 = 1;
+// let counter2 = 1
+// let n = str1.length;
+
+// let set1 = new Set(str1.split(''))
+// let set2 = new Set(str2.split(''))
+
+// if(set1.size !== set2.size) return false;
+
+// let i = 0
+// let arr1CountFreq = []
+// let arr2CountFreq = []
+// let j = 0
+// while( i < n && j < n) {
+// arr1CountFreq.push(counter1)
+//   if(str1[i] === str1[ i + 1]) {
+//       counter1++
+//   } else {
+//       counter1 = 1
+//   }
+
+// arr2CountFreq.push(counter2)
+//   if(str2[j] == str2[j + 1]) {
+//           counter2++
+//   } else {
+//         counter2 = 1
+//   }
+// j++
+// i++
+// }
 
 
-if(str1.length != str2.length) return false;
-// code here
 
-let counter1 = 1;
-let counter2 = 1
-let n = str1.length;
 
-let set1 = new Set(str1.split(''))
-let set2 = new Set(str2.split(''))
-
-if(set1.size !== set2.size) return false;
-
-let i = 0
-let arr1CountFreq = []
-let arr2CountFreq = []
-let j = 0
-while( i < n && j < n) {
-arr1CountFreq.push(counter1)
-  if(str1[i] === str1[ i + 1]) {
-      counter1++
-  } else {
-      counter1 = 1
-  }
-
-arr2CountFreq.push(counter2)
-  if(str2[j] == str2[j + 1]) {
-          counter2++
-  } else {
-        counter2 = 1
-  }
-j++
-i++
-}
-
-return arr1CountFreq.join('') === arr2CountFreq.join('')
 
