@@ -1,36 +1,46 @@
-const add = (a, b) => a + b;
 
-const memoizedAdd = memoizedOne(add);
+class testingPromise {
+  static STATUS_PENDING = "PENDING";
+  static STATUS_RESOLVED = "RESOLVED";
+  static STATUS_REJECTED = "REJECTED";
+  rejected = "";
+  fullfilled = "";
+  
+  constructor(request) {
+    this.STATUS = this.STATUS_PENDING;
+    this.promise(request);
+  }
 
-function memoizedOne(add) {
-  let cache = [];
+  then(response) {
+    this.STATUS = this.STATUS_PENDING;
+    return this.promise(response);
+  }
 
-  return function (a, b) {
-    let cacheResult = null;
-   
-    for (let i = 0; i < cache.length; i++) {
-      let obj = cache[i];
-      if (obj.a == a && obj.b == b) {
-        cacheResult = obj.result;
-        break;
-      }
+  resolve(fullfilled) {
+    if (this.STATUS === this.STATUS_PENDING) {
+      this.STATUS = this.STATUS_RESOLVED;
+      this.rejected = "";
+      this.fullfilled = fullfilled;
     }
+  }
 
-    if (cacheResult != null) {
-      console.log(`Sum returned by cache: ${cacheResult}`);
-      return cacheResult;
+  reject(rejectMessage) {
+    if (this.STATUS === this.STATUS_PENDING) {
+      this.STATUS = this.STATUS_REJECTED;
+      this.rejected = rejectMessage;
     }
+  }
 
-    let result = add(a, b);
-    cache.push({ a, b, result });
-    console.log(`Sum calculated by function: ${result}`);
-    return result;
-  };
+  catch(failureCallback) {
+    if (this.STATUS === this.STATUS_REJECTED) {
+      failureCallback(this.rejected);
+    }
+  }
+
+  promise(request) {
+    request(this.resolve.bind(this), this.reject.bind(this));
+    return this;
+  }
 }
 
-console.log(memoizedAdd(1, 6));
-console.log(memoizedAdd(3 ,6));
-console.log(memoizedAdd(4, 6));
-console.log(memoizedAdd(1, 6));
-console.log(memoizedAdd(4, 6));
-console.log(memoizedAdd(3 ,6));
+const testPromise = new testingPromise((resolve, reject) => {});

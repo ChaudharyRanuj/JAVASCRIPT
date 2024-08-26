@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Element in Array</title>
+    <script defer src="2-insert-element.js"></script>
+    <style>
+      body {
+        font-size: 24px;
+        color: #333;
+      }
+      span {
+        font-size: 14px;
+        display: block;
+      }
+
+      .arrays {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .left,
+      .right {
+        padding: 32px;
+      }
+      h1 {
+        font-size: 44px;
+        margin-bottom: 0;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .table-row {
+        margin: 24px;
+      }
+
+      button {
+        padding: 10px 16px;
+        font-weight: 600;
+        font-size: 18px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Insert New Element in Array</h1>
+    <div class="arrays">
+      <div class="left">
+        <h2>Insert New Element at Index</h2>
+        <p><b>Old Array: </b> [1, 2, 3, 4, 5, 6]</p>
+        <ul id="array-elements"></ul>
+        <form action="">
+          <div class="table-row">
+            <label for="indexNo">Index No:</label>
+            <input
+              type="text"
+              id="indexNo"
+              placeholder="enter index no to find"
+            /> <br>
+          </div>
+          <div class="table-row">
+            <label for="new-element">New Element:</label>
+            <input
+              type="text"
+              id="new-element"
+              placeholder="enter new element to insert"
+            />
+          </div>
+          <div class="table-row">
+            <button type="button" id="insert-element">Insert Element</button>
+          </div>
+          
+        </form>
+        <p id="update-confirm"></p>
+        <p id="updated-array"></p>
+      </div>
+         
+   
+    </div>
+  </body>
+</html>

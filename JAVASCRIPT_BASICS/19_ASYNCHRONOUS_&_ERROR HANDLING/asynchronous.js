@@ -76,6 +76,7 @@ request.addEventListener("load", function () {
   renderdata(data);
 });
 
+
 function renderdata(data) {
   const mybike = data.networks;
   const dataTable = document.querySelector(".data-table");

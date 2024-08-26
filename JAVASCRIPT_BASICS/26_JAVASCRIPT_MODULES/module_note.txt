@@ -22,7 +22,8 @@ When using import and export statement in local machine we need a server
 for running the import and export statements.
 
 Note: 
-1). For Frameworks like REACT, ANGULAR we have webpack or related build tool which run the development server, so import and export statements are execute directly.
+1). For Frameworks like REACT, ANGULAR we have webpack or related build tool which run the development server, 
+    so import and export statements are execute directly.
 2) With simple HTML and Javascript we need to have local server or we can configure
 the chrome web server.
 
