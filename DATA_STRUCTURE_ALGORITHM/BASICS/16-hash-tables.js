@@ -44,65 +44,75 @@ each index.
 // HASH TABLE CLASS
 
 class HashTable {
-  constructor(size = 53) {
-    this.dataMap = new Array(size);
+  constructor(size = 7) {
+    this.dataSet = new Array(size);
   }
-  _hash(key) {
-    let index = 0;
-    let WEIRD_PRIME = 31;
-    for (let i = 0; i < Math.min(key.length, 100); i++) {
-      let char = key[i];
-      let value = char.charCodeAt(0) - 96;
-      index = (index + value * WEIRD_PRIME) % this.dataMap.length;
+
+  _hashCode(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash = (hash + key.charCodeAt(i)) % this.dataSet.length;
     }
-    return index;
+    return hash;
   }
 
   set(key, value) {
-    let index = this._hash(key);
-    if (!this.dataMap[index]) {
-      this.dataMap[index] = [];
+    const index = this._hashCode(key);
+    if (!this.dataSet[index]) {
+      this.dataSet[index] = [];
     }
-    this.dataMap[index].push([key, value]);
+    this.dataSet[index].push([key, value]);
+    return this.dataSet;
   }
 
   get(key) {
-    let index = this._hash(key);
-    if (this.dataMap[index]) {
-      for (let i = 0; i < this.dataMap[index].length; i++) {
-        if (this.dataMap[index][i][0] === key) {
-          return this.dataMap[index][i];
-        }
+    let index = this._hashCode(key);
+    if (this.dataSet[index]) {
+      let array = this.dataSet[index];
+      for (let i = 0; i < array.length; i++) {
+        const [savedKey, value] = array[i];
+        if (savedKey === key) return value;
       }
     }
-  }
-  // CHECK DUPLICATE KEYS
-  keys() {
-    let keyArr = [];
-    for (let i = 0; i < this.dataMap.length; i++) {
-      if (this.dataMap[i]) {
-        for (let j = 0; j < this.dataMap[i].length; j++) {
-          if (!keyArr.includes(this.dataMap[i][j][0])) {
-            keyArr.push(this.dataMap[i][j][0]);
-          }
-        }
-      }
-    }
-    return keyArr;
   }
 
-  // CHECK DUPLICATE VALUES
-  values() {
-    let valuesArr = [];
-    for (let i = 0; i < this.dataMap.length; i++) {
-      if (this.dataMap[i]) {
-        for (let j = 0; j < this.dataMap[i].length; j++) {
-          if (!valuesArr.includes(this.dataMap[i][j][1])) {
-            valuesArr.push(this.dataMap[i][j][1]);
-          }
+  key() {
+    let keys = [];
+    for (let i = 0; i < this.dataSet.length; i++) {
+      if (this.dataSet[i]) {
+        let array = this.dataSet[i];
+        for (let i = 0; i < array.length; i++) {
+          const [savedKey, value] = array[i];
+          keys.push(savedKey);
         }
       }
     }
-    return valuesArr;
+    return keys;
+  }
+  
+  values() {
+    let values = [];
+    for (let i = 0; i < this.dataSet.length; i++) {
+      if (this.dataSet[i]) {
+        let array = this.dataSet[i];
+        for (let i = 0; i < array.length; i++) {
+          const [savedKey, value] = array[i];
+          values.push(value);
+        }
+      }
+    }
+    return values;
   }
 }
+
+const disctionary = new HashTable();
+
+console.log(disctionary.set("ranuj", 33));
+console.log(disctionary.set("raneesh", 30));
+console.log(disctionary.set("amisha", 32));
+console.log(disctionary.set("rajat", 32));
+console.log(disctionary.set("tanya", 32));
+console.log(disctionary.set("manju", 32));
+console.log(disctionary.get("raneesh"));
+console.log(disctionary.key());
+console.log(disctionary.values());
