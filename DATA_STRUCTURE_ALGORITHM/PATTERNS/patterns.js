@@ -175,3 +175,121 @@ function pattern10(n) {
 //   }
 // }
 // pattern13(5);
+
+// PATTERN 14
+
+// function pattern14(n) {
+//   let count = 0;
+//   for (let i = 1; i <= n; i++) {
+//     let str = "";
+//     for (let ch = "A".charCodeAt(0); ch < "A".charCodeAt(0) + i; ch++) {
+//       str += `${String.fromCharCode(ch)}`;
+//     }
+//     console.log(str);
+//   }
+// }
+// pattern14(5);
+
+// PATTERN 15
+
+// function pattern15(n) {
+//   let count = 0;
+//   for (let i = n; i > 0; i--) {
+//     let str = "";
+//     for (let ch = "A".charCodeAt(0); ch < "A".charCodeAt(0) + i; ch++) {
+//       str += `${String.fromCharCode(ch)}`;
+//     }
+//     console.log(str);
+//   }
+// }
+// pattern15(5);
+
+// PATTERN 16
+
+// function pattern16(n) {
+//   let count = 0;
+//   for (let i = 0; i >= n; i++) {
+//     let str = '';
+//     for (let j = 1; j <= i; j++) {
+//       const ch = 'A'.charCodeAt(0) + i;
+//       str += `${String.fromCharCode(ch)}`;
+//     }
+//     console.log(str);
+//   }
+// }
+// pattern16(5);
+
+// PATTERN 17
+// function pattern17(n) {
+//   for (let i = 0; i < n; i++) {
+//     let str = '';
+//     for (let j = 0; j < n - i + 1; j++) {
+//       str += ' ';
+//     }
+
+//     for (let ch = 'A'.charCodeAt(0); ch <= 'A'.charCodeAt(0) + i; ch++) {
+//       str += `${String.fromCharCode(ch)}`;
+//     }
+//     for (let ch = 'A'.charCodeAt(0) + i - 1; ch >= 'A'.charCodeAt(0); ch--) {
+//       str += `${String.fromCharCode(ch)}`;
+//     }
+
+//     for (let j = 0; j < n - i + 1; j++) {
+//       str += ' ';
+//     }
+
+//     console.log(str);
+//   }
+// }
+// pattern17(4);
+
+// PATTERN 18
+
+// function pattern18(n) {
+//   for (let i = 0; i <= n; i++) {
+//     let str = "";
+//     for (let j = 0; j <= i; j++) {
+//       let ch = "A".charCodeAt(0) + n - j;
+//       str = `${String.fromCharCode(ch)}` + str;
+//     }
+
+//     console.log(str);
+//   }
+// }
+// pattern18(4);
+
+// // PATTERN 19
+// function pattern19(n) {
+//   for (let i = 0; i <= n; i++) {
+//     let str = "";
+//     for (let j = 0; j <= n - i; j++) {
+//       str += "*";
+//     }
+
+//     for (let j = 0; j < 2 * i; j++) {
+//       str += " ";
+//     }
+
+//     for (let j = 0; j <= n - i; j++) {
+//       str += "*";
+//     }
+//     console.log(str);
+//   }
+
+//   for (let i = 0; i <= n; i++) {
+//     let str = "";
+//     for (let j = 0; j <= i; j++) {
+//       str += "*";
+//     }
+
+//     for (let j = 0; j < 2 * n - 2 * i; j++) {
+//       str += " ";
+//     }
+
+//     for (let j = 0; j <= i; j++) {
+//       str += "*";
+//     }
+//     console.log(str);
+//   }
+// }
+// pattern19(5);
