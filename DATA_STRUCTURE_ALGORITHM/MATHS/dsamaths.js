@@ -110,7 +110,7 @@ function checkForPrimes(digit) {
   }
 }
 
-// GDC/HCF
+// ************* GDC/HCF ***************
 
 // Euclidean Algorithm
 
@@ -132,3 +132,32 @@ function checkForPrimes(digit) {
 // }
 
 // console.log(findGCD(128, 90));
+
+//**************** */ LCM And GCD ****************
+
+//  a * b = LCM(a, b) * HCF(a,b)
+// a and b are numbers
+
+// class Solution{
+//   lcmAndGcd(a, b){
+//       //code here
+//       let gcd = 1
+//       let n1 = a;
+//       let n2 = b;
+//       // euclid theorem
+//       // euclidean algorithm for gcd
+// while(n1 > 0 && n2 > 0 ){
+//    if(n1 > n2){
+//        n1 = n1 - n2
+//    } else {
+//        n2 = n2 - n1
+//    }
+//    if(n1 === 0) gcd = n2
+//    if(n2 === 0) gcd = n1
+// }
+
+// let lcm = (a * b)/gcd
+
+// return [lcm, gcd]
+//   }
+// }

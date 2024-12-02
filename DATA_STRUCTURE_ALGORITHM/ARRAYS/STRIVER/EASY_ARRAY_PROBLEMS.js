@@ -681,14 +681,13 @@ var maxSubArray = function (nums) {
   return max;
 };
 
-// Q12.Sort an array of 0's, 1's and 2's
+// Q12.Sort an array of 0's, 1's and 2's (DUTCH NATIONAL FLAG ALGORITHM)
 //######################
 
-// BRUTE FORCE
-// take three pointer for each 0, 1, 2 count them
-// than loop for each value inserting the value in place in given array
+// 0| 000000000 | low - 1    low | 11111111111 | mid -1  mid | unsorted | high - 1   high | 2222222222222| n - 1
 
 // optimised approach (DUTCH NATIONAL FLAG ALGORITHM)
+
 var sortColors = function (arr) {
   let low = 0;
   let mid = 0;
@@ -848,7 +847,6 @@ var rearrangeArray = function (arr) {
 
 // Q13. Longest Sub-Array with Sum K
 
-
 // BRUTE FORCE
 class Solution {
   lenOfLongSubarr(arr, n, k) {
@@ -871,3 +869,35 @@ class Solution {
 // TIME COMPLEXTIY : O(N2)
 // SPACE COMPLEXTIY : O(1)
 
+// OPTIMISED
+class Solution {
+  lenOfLongSubarr(arr, n, K) {
+    //code here
+    let sum = 0;
+    let map = new Map();
+    let max = 0;
+
+    for (let i = 0; i < n; i++) {
+      sum += arr[i];
+      if (sum === K) {
+        max = Math.max(max, i + 1);
+      }
+      let sumToCheck = sum - K;
+
+      // check if sum exist before
+      if (map.has(sumToCheck)) {
+        const prevSumIndex = map.get(sumToCheck);
+        const subArrayLength = i - prevSumIndex;
+        max = Math.max(max, subArrayLength);
+      }
+      if (!map.has(sum)) {
+        map.set(sum, i);
+      }
+    }
+
+    return max;
+  }
+}
+
+// TIME COMPLEXITY : O(n)
+// Space COMPLEXITY : O(n)
