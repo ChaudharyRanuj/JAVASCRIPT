@@ -116,48 +116,42 @@
 // * Pivot element can be first, last, median element of an array.
 // * Work of principle of deviding the array into sub arrays.
 // * Partition 1 (left side)  PivotElement    Element Partition 2 (right side)
-//    Value < pivotEl                                  Value > pivotEl
-
-// const mousePrice =[1,4,3,2,5,10,20,50];
-// const lb = 0;
-// const ub = mousePrice.length - 1;
-
+//    Value < pivotEl         
+                         Value > pivotEl
 // function pivotSort(arr, lb, ub) {
-//    let pivot = arr[lb]
-//    let start = lb;
-//    let end = ub;
+//     let pivot = arr[lb];
+//     let start = lb;
+//     let end = ub;
 
-// while (start < end) { 
-//     while (arr[start] <= pivot) {
-//        start++;
+//     while (start < end) {
+//       while (arr[start] <= pivot && start <= ub - 1) {
+//         start++;
+//       }
+
+//       while (arr[end] > pivot && end >= lb + 1) {
+//         end--;
+//       }
+
+//       if (start < end) {
+//         [arr[start], arr[end]] = [arr[end], arr[start]];
+//       }
 //     }
 
-//     while ( arr[end] > pivot) {
-//         end--;
-//      }
+//     if (start > end) {
+//       [arr[lb], arr[end]] = [arr[end], pivot];
+//     }
+//     return end;
+//   }
 
-// if (start < end) {
-// [arr[start], arr[end]] = [arr[end], arr[start]]
-// }
+//   function quickSort(arr, lb, ub) {
+//     if (lb < ub) {
+//       let loc = pivotSort(arr, lb, ub);
 
-// }
-
-// if (start > end) {
-//     [arr[lb], arr[end]] = [arr[end], pivot]
-// }
-// return end;
-// }
-
-// function quickSort (arr, lb, ub) {
-// if (lb < ub) {
-// let loc = pivotSort(arr, lb, ub)
-
-// quickSort(arr, lb, loc - 1)
-// quickSort(arr, loc + 1, ub)
-
-// }
-// }
-// quickSort(mousePrice, lb, ub);
+//       quickSort(arr, lb, loc - 1);
+//       quickSort(arr, loc + 1, ub);
+//     }
+//   }
+//   quickSort(mousePrice, lb, ub);
 
 // ----- 5. MERGE SORT (works on divide and conquer technique)
 // Divide the array to mid position
@@ -203,4 +197,3 @@
 //   return result;
 // }
 // const sortedArray = mergeSort([4, 5, 8, 6, 9, 7, 54, 9]);
-

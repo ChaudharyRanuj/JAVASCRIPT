@@ -120,23 +120,30 @@ let SubSequence = [];
 let indx = 0;
 let sum = 0;
 let target = 3;
-// function printSubSequence(indx, SubSequence, arr, sum, target) {
-//   if (indx >= arr.length) {
-//     if (sum <= target) return 1;
-//     return 0;
-//   }
-//   SubSequence.push(arr[indx]);
-//   sum += arr[indx];
-//   let l = printSubSequence(indx + 1, SubSequence, arr, sum, target);
 
-//   SubSequence.pop();
-//   sum -= arr[indx];
+function printSubSequence(indx, SubSequence, arr, sum, target) {
+  if (indx >= arr.length) {
+    if (sum <= target) return 1;
+    return 0;
+  }
+  SubSequence.push(arr[indx]);
+  sum += arr[indx];
+  let l = printSubSequence(indx + 1, SubSequence, arr, sum, target);
 
-//   let r = printSubSequence(indx + 1, SubSequence, arr, sum, target);
+  SubSequence.pop();
+  sum -= arr[indx];
 
-//   return l + r;
-// }
-// console.log(printSubSequence(indx, SubSequence, arr, sum, target));
+  let r = printSubSequence(indx + 1, SubSequence, arr, sum, target);
 
+  return l + r;
+}
 
+// 7) Reverse an Array
 
+function reverseArray(left, right, arr) {
+  if (left >= right) {
+    return arr;
+  }
+  [arr[left], arr[right]] = [arr[right], arr[left]];
+  return reverseArray(left + 1, right - 1, arr);
+}
