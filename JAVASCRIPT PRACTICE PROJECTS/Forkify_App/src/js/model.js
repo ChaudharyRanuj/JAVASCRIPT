@@ -11,6 +11,7 @@ export const state = {
     page: 1,
     resultPerPage: RES_PER_PAGE,
   },
+  addBookmarks: []
 };
 
 export const loadRecipe = async function (id) {
@@ -74,3 +75,5 @@ state.addBookmarks.push(recipe)
 if(recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 
 }
+
+

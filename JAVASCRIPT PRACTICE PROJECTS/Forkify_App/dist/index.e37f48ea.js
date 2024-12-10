@@ -615,7 +615,7 @@ const controlSearchRecipe = async function() {
         // 2) Load Search results
         await _modelJs.loadSearchResults(query);
         // 3) Render Result
-        (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultsPage(6));
+        (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultsPage(1));
         // 4) Render inital pagination buttons
         (0, _paginationViewJsDefault.default).render(_modelJs.state.search);
     } catch (err) {
@@ -1910,7 +1910,8 @@ const state = {
         results: [],
         page: 1,
         resultPerPage: (0, _configJs.RES_PER_PAGE)
-    }
+    },
+    addBookmarks: []
 };
 const loadRecipe = async function(id) {
     try {
