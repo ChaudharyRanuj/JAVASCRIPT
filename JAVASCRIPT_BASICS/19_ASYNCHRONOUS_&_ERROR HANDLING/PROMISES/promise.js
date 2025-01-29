@@ -1,11 +1,11 @@
 // FUNCTIONING OF PROMISES
 
 class testingPromise {
-  static STATUS_PENDING = "PENDING";
-  static STATUS_RESOLVED = "RESOLVED";
-  static STATUS_REJECTED = "REJECTED";
-  rejected = "";
-  fullfilled = "";
+  static STATUS_PENDING = 'PENDING';
+  static STATUS_RESOLVED = 'RESOLVED';
+  static STATUS_REJECTED = 'REJECTED';
+  rejected = '';
+  fullfilled = '';
 
   constructor(request) {
     this.STATUS = this.STATUS_PENDING;
@@ -20,7 +20,7 @@ class testingPromise {
   resolve(fullfilled) {
     if (this.STATUS === this.STATUS_PENDING) {
       this.STATUS = this.STATUS_RESOLVED;
-      this.rejected = "";
+      this.rejected = '';
       this.fullfilled = fullfilled;
     }
   }
